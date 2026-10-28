@@ -28,7 +28,7 @@
 </p>
 
 > [!NOTE]
-> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episode 2 is out too, with its page, slides, transcript, brief and notebook. The notebooks for Episodes 3–15 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
+> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episodes 2 and 3 are out too, each with its page, slides, transcript, brief and notebook. The notebooks for Episodes 4–15 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
 
 <details>
 <summary><b>Table of Contents</b></summary>
@@ -86,7 +86,7 @@
 
 Start with Episode 1, or the 4-minute trailer for the whole plan. New episodes are added to the same playlist.
 
-[Episode 1](https://youtu.be/ZJ4BbrnXBRo) · [Episode 2](https://youtu.be/onxRHQlY-TI) · [trailer](https://youtu.be/rXTCgq-qoJA) · [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM)
+[Episode 1](https://youtu.be/ZJ4BbrnXBRo) · [Episode 2](https://youtu.be/onxRHQlY-TI) · [Episode 3](https://youtu.be/RwVAxe58lqE) · [trailer](https://youtu.be/rXTCgq-qoJA) · [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM)
 
 </td>
 <td width="33%" valign="top">
@@ -112,13 +112,13 @@ Each episode has slides as a PDF, the transcript, a research brief with every so
 
 ## course
 
-Episodes 1 and 2 are out, with their pages here. The notebooks for Episodes 3–15 are ready ahead of their videos, and each episode's folder (slides, transcript, research brief, page) is added here when its video is released. The full plan is in the [syllabus](course/).
+Episodes 1 to 3 are out, with their pages here. The notebooks for Episodes 4–15 are ready ahead of their videos, and each episode's folder (slides, transcript, research brief, page) is added here when its video is released. The full plan is in the [syllabus](course/).
 
 | **#** | **episode** | **watch** | **notebook** | **materials** |
 |:--:|---|---|---|---|
 | **1** | **[What an LLM Really Is](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/)**<br><sub>Part I · 12:20</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/ZJ4BbrnXBRo) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/transcript/Episode%2001%20-%20What%20an%20LLM%20Really%20Is%20-%20transcript.txt) |
 | **2** | **[Numbers as Geometry: Vectors](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/)**<br><sub>Part I · 13:05 · Words as lists of numbers; dot product, length, cosine similarity</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/onxRHQlY-TI) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/transcript/Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors%20-%20transcript.txt) |
-| **3** | **Matrices as Machines**<br><sub>Part I · A matrix as a machine that maps vectors; weights and biases</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2003%20-%20Matrices.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2003%20-%20Matrices.ipynb) | |
+| **3** | **[Matrices as Machines](Episode%2003%20-%20Matrices%20as%20Machines/)**<br><sub>Part I · 15:11 · A matrix as a machine that maps vectors; the product and the shape rule; weights and biases</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/RwVAxe58lqE) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2003%20-%20Matrices%20as%20Machines/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2003%20-%20Matrices%20as%20Machines/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2003%20-%20Matrices%20as%20Machines/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2003%20-%20Matrices%20as%20Machines/transcript/Episode%2003%20-%20Matrices%20as%20Machines%20-%20transcript.txt) |
 | **4** | **Probability, Entropy and Perplexity**<br><sub>Part I · Distributions, softmax, surprise, cross-entropy and perplexity</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2004%20-%20Probability%20Entropy%20Perplexity.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2004%20-%20Probability%20Entropy%20Perplexity.ipynb) | |
 | **5** | **Calculus for Learning**<br><sub>Part I · Derivatives, the gradient and the chain rule, as the tools learning needs</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2005%20-%20Calculus%20for%20Learning.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2005%20-%20Calculus%20for%20Learning.ipynb) | |
 | **6** | **What Learning Means: Data, Models, Loss**<br><sub>Part II · Training data, a model with parameters, and a loss that scores it</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2006%20-%20Learning%20Loss.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2006%20-%20Learning%20Loss.ipynb) | |
@@ -242,6 +242,15 @@ Watch in order in the [YouTube playlist](https://www.youtube.com/playlist?list=P
 </td>
 </tr>
 <tr>
+<td width="40%"><a href="https://youtu.be/RwVAxe58lqE"><img src="Episode%2003%20-%20Matrices%20as%20Machines/thumbnail.png" width="100%" alt="Watch Episode 3: Matrices as Machines"></a></td>
+<td valign="top">
+<b><a href="https://youtu.be/RwVAxe58lqE">Episode 3 · Matrices as Machines</a></b><br>
+<sub><b>Length:</b> 15:11 · <b>Part I:</b> Foundations · <a href="Episode%2003%20-%20Matrices%20as%20Machines/">Materials&nbsp;→</a></sub>
+<p>Four numbers in a square move every point in the plane at once; lines stay lines and the origin stays put. That square is a matrix, and every layer of every transformer is one. We multiply matrices by hand, all four entries, learn the shape rule, write h = Wu + β, push a whole sentence through a layer in one product, and watch two linear layers collapse into one.</p>
+<p><b>The idea to keep:</b> <i>A matrix is a rule that moves vectors; its columns say where the basis arrows land. A stack of linear maps is still one linear map.</i></p>
+</td>
+</tr>
+<tr>
 <td width="40%"><a href="https://youtu.be/rXTCgq-qoJA"><img src="docs/assets/trailer-thumbnail.png" width="100%" alt="Watch the series trailer"></a></td>
 <td width="60%" valign="top">
 <b><a href="https://youtu.be/rXTCgq-qoJA">Series trailer · From Math to Transformers</a></b><br>
@@ -313,7 +322,7 @@ Because it is open, small and well documented, so every number in the video can 
 <details>
 <summary><b>When do the next episodes come out?</b></summary>
 
-As they are finished. The notebooks for Episodes 3–15 are already here. Subscribe to the [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) or watch this repository's releases to hear about each one.
+As they are finished. The notebooks for Episodes 4–15 are already here. Subscribe to the [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) or watch this repository's releases to hear about each one.
 </details>
 
 <details>
@@ -345,7 +354,8 @@ Used the series in a class, a study group, or to build something? Share it in [D
 |---|---|
 | [`Episode 01 - What an LLM Really Is`](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) |
 | [`Episode 02 - Numbers as Geometry Vectors`](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) |
-| [`notebooks/`](notebooks/) | Companion notebooks for Episodes 3–15, ready ahead of their videos |
+| [`Episode 03 - Matrices as Machines`](Episode%2003%20-%20Matrices%20as%20Machines/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2003%20-%20Matrices%20as%20Machines/notebook.ipynb) |
+| [`notebooks/`](notebooks/) | Companion notebooks for Episodes 4–15, ready ahead of their videos |
 | [`course/`](course/) | Syllabus: all 30 episodes, six parts, outcomes |
 | [`docs/`](docs/) | [Glossary and notation](docs/glossary.md) and the README's images |
 | [`tools/`](tools/) | `check_notebooks.py`, which runs every notebook and its asserts |

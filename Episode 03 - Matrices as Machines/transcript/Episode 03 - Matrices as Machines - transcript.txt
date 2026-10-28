@@ -1,0 +1,88 @@
+Episode 3: Matrices as Machines
+How Large Language Models Work: From Math to Transformers
+Narrated by Mark (ElevenLabs clone of his own voice)
+
+[0:08]
+Here's a grid, and one arrow sitting in it. Now I'm going to hand the arrow to four numbers. Just four, arranged in a little square. Watch the grid. It bends. It stretches. Every line is still a straight line, every line is still evenly spaced, and the center never moved. Four numbers just moved every point in the plane, all at once, by one rule.
+
+[0:32]
+That square of numbers is a matrix. And here's why it matters for this series: every layer of every transformer is one of these. Numbers in, transformed numbers out, by a rule written as a grid. By the end of this episode you'll multiply matrices by hand, you'll know why their shapes have to match, and you'll see why stacking two of them, with nothing in between, buys you exactly nothing.
+
+[0:55]
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode three: matrices as machines. Four parts. A matrix as a rule that moves vectors, and what its columns mean. The matrix product, and the shape rule that tells you when it even exists. The linear layer, h equals W u plus beta, and why that little beta matters more than it looks. And then stacking tokens into rows, which is how a transformer handles a whole sentence at once, plus a myth about depth. Everything here is in the companion notebook, linked in the description.
+
+[1:29]
+Part one. What makes a transformation linear? The informal test from Grant Sanderson's Essence of linear algebra: after the move, every straight line is still a straight line, and the origin stays exactly where it was. No curves, no shifting. A matrix describes one of those moves, and its columns tell you everything. The first column is where the first basis arrow lands. The second column is where the second basis arrow lands. Read the columns, and you know where every point goes, because every point is built from those two arrows.
+
+[1:59]
+That gives you matrix-times-vector for free. Take the vector's first coordinate, and scale the first column by it. Take the second coordinate, scale the second column. Add the results. The output is a weighted mix of the columns, and the weights are the input's coordinates. There's a second way to read the same arithmetic, and it's the one we'll use most. Each output component is a dot product. Component i of W u is row i of W, dotted with u. That's the calculation from episode two, multiply matching entries and add, done once per row.
+
+[2:30]
+Two things the picture can hide. First, a matrix doesn't have to be square. A matrix with two rows and three columns takes a three-number vector in and hands a two-number vector back. Three in, two out. It changed the dimension. Second, the thing a linear map cannot do. The origin stays fixed, so a linear map can never shift a vector sideways. It can rotate, stretch, squash, flip. It cannot slide. Hold that thought, because shifting is going to be somebody else's job.
+
+[3:01]
+Part two: multiplying two matrices. Here's the definition. Entry i, j of A B is the sum over k of A i k times B k j. Row i of A, dotted with column j of B. One dot product per entry. That sum over k only works if the sizes line up. A has to have as many columns as B has rows. Inner sizes match, and the result takes the outer sizes. A is m by k, B is k by r, A B is m by r.
+
+[3:32]
+Let's do one by hand, slowly, because most people have never actually done this. A is two by three: row one is one, zero, one. Row two is zero, two, zero. B is three by two: rows one, zero; zero, one; one, one. Inner sizes: A has three columns, B has three rows. They match, so A B exists, and it's two by two. Four entries to fill. Entry row one, column one. Take row one of A: one, zero, one. Take column one of B: one, zero, one. Multiply in pairs. One times one is one. Zero times zero is zero. One times one is one. Now add: one plus zero plus one. Two. That's the top-left entry.
+
+[4:18]
+Entry row one, column two. Same row of A: one, zero, one. Now column two of B: zero, one, one. One times zero is zero. Zero times one is zero. One times one is one. Add them: zero plus zero plus one. One.
+
+[4:37]
+Second row. Row two of A is zero, two, zero. Column one of B: one, zero, one. Zero times one, two times zero, zero times one. All zeros, so the sum is zero. And row two with column two: zero, one, one. Zero times zero is zero. Two times one is two. Zero times one is zero. Two. So A B is: two, one on top; zero, two below. Four dot products, four entries. That's the whole method, and the notebook checks every one.
+
+[5:09]
+Three quick checks. Two by three, times three by two: the inner threes match, so the product exists, and it's two by two. Three by two, times two by three: the inner twos match, and now the answer is three by three. Same two matrices, opposite order, different shape. And two by three, times two by three? Inner sizes three and two. They don't match. That product is undefined. Not zero. Not an error you can fix. It simply doesn't exist. Which already tells you something: matrix multiplication is not commutative. A B and B A can differ, and one of them might not even be defined.
+
+[5:46]
+So what does a product mean? Multiplying two matrices is composition: do one transformation, then the other. And the order reads right to left, because the matrix nearest the vector acts first. A B u means: apply B to u, then apply A to the result. Here's a rotation, then a stretch. And here's the stretch first, then the rotation. Different pictures. Order changes the result, and the shape rule is only the first way you'll notice.
+
+[6:14]
+Part three: the linear layer. Here's the one line every neural network is built from. h equals W u plus beta. u is the input, a vector with d numbers. W is the weight matrix, d-out rows by d columns. Beta is the bias, d-out numbers. h is the output. Why beta and not b? Because b was a vector in episode two, and x and y are taken too. Goodfellow, Bengio and Courville write exactly this line as z equals W x plus b in their textbook. Same idea, our letters.
+
+[6:47]
+And here's what beta does. Remember what a linear map can't do: it can't shift. W moves every point by one rule, origin fixed. Then beta adds the same vector to every output, which slides the whole picture. W bends the grid. Beta moves it. Strictly, once beta is in there, the map is affine, not linear. Everyone still says "linear layer," and so will I, but now you know the honest word. In a real hidden layer, one more thing happens after this: a fixed bend, applied to each entry of h. That bend is episode eleven. Today is just W and beta.
+
+[7:22]
+Here's the picture I'd keep. A mixing board. Three input strips on the left, say cat, mat and tired. Two output buses on the right. And at every crossing, a dial. Two rows of dials, three in each row. That grid of dials is W. Each output bus is a weighted sum of the inputs, and the dials are the weights. Now one honest gap. A real board has no knob that adds a fixed amount to an output no matter what comes in. So picture a trim knob on each bus that does exactly that. The trim is the bias. And one more thing a real board gets wrong: on this board, the dials were set by hand. In a model, training sets them. That's episode seven.
+
+[8:02]
+Math Lab. All the numbers are hand-picked, so we can check them. W has two rows and three columns: row one is one, zero, zero. Row two is zero, two, one. Beta is zero, one. Stack the three words from episode two as rows: cat is one, one, zero. Mat is one, zero, zero. Tired is zero, zero, one. Now apply W to cat, one row at a time. Row one dotted with cat: one times one, plus zero, plus zero. One. Row two dotted with cat: zero, plus two times one, plus one times zero. Two. W cat is one, two. Three numbers in, two out.
+
+[8:39]
+Same move for the other two. W mat: row one gives one, row two gives zero. One, zero. W tired: row one gives zero, row two gives one. Zero, one. Now add beta, which is zero, one, to each. Cat becomes one, three. Mat becomes one, one. Tired becomes zero, two. Those three pairs are the layer's outputs. Three words went in with three numbers each, and came out with two numbers each, shifted by the same bias.
+
+[9:11]
+Part four. A transformer doesn't process one word at a time. It takes the whole sentence at once. So stack the input vectors as the rows of one matrix, call it U, one row per token. The MIT introduction-to-machine-learning notes use the same convention: row i is token i. U is n by d, n tokens, d numbers each. To push every row through the layer in one product, you multiply U by W transpose. Why the transpose? Row i of U W-transpose is the same as W applied to u i, written as a row. The shape rule checks out: n by d, times d by d-out, gives n by d-out. One product, every token.
+
+[9:53]
+Watch it happen. W transpose has three rows and two columns: one, zero; zero, two; zero, one. U is our three words stacked, three by three. Three by three times three by two: inner threes match, result is three by two. Row one, column one: row one of U, which is cat, one, one, zero, dotted with column one of W transpose, one, zero, zero. One times one, one times zero, zero times zero. One plus zero plus zero. One. Row one, column two: one, one, zero, dotted with zero, two, one. One times zero, one times two, zero times one. Zero plus two plus zero. Two. So row one is one, two. W applied to cat, exactly as before.
+
+[10:40]
+Same two dot products for each remaining row. Row two, mat: one, zero. Row three, tired: zero, one. Exactly the three results from the Math Lab, in one multiplication. Add beta to every row, and you have the layer's output for the whole sentence. One warning for when you read other people's notes: some write the input as a column and multiply by W transpose, some write it as a row and multiply by W. Same map. Different bookkeeping. If the shape rule just clicked for you, that's the moment to subscribe. The rest of the series leans on this episode constantly.
+
+[11:15]
+Now the preview that sets up the myth. Add a second layer after the first: W prime, a single row, one, one, with no bias. Apply it to the output for cat, which was one, two. One plus two. Three. Now instead, multiply the two matrices first. W prime times W is a single row: one, two, one. Dot that with cat directly: one, plus two, plus zero. Three. Same answer. And it's not a coincidence. W prime times W u plus beta equals W prime W, times u, plus W prime beta. Distributivity and associativity, nothing more. Two layers, one matrix.
+
+[11:56]
+So here's the myth: more linear layers means more power. The intuition is reasonable. Each layer adds parameters, so a stack of them should do more than one. But you just watched two layers collapse into one matrix. Goodfellow's textbook makes the general argument: if a layer is linear, the whole network remains a linear function of its input. To describe anything beyond that, in their words, we must use a nonlinear function. A stack of linear maps is still one linear map. The bend has to come from somewhere else.
+
+[12:27]
+That doesn't make linear layers useless. Ours changed the dimension, three to two, and mixed the inputs. That's real work. It just doesn't compound. And one more overstatement to retire: "every layer is a matrix multiply." A hidden layer is an affine map followed by a nonlinearity. And in attention, the step that turns scores into weights is a softmax applied to each row, which is not a matrix product at all. Matrices do the heavy lifting. They don't do all of it.
+
+[12:56]
+Let's put it together. A matrix is a linear map: its columns say where the basis arrows land, and each output component is a dot product. Multiplying matrices is composition, right to left, and it exists only when the inner sizes match, with the outer sizes as the result. A layer is h equals W u plus beta, and beta is what lets it shift. Stacked inputs go in rows, one product for the whole sentence. And two linear layers with nothing between them are one.
+
+[13:24]
+One question to take with you. A layer takes inputs with three numbers and returns outputs with two. First: what shape is W? Second: if ten token vectors are stacked as rows, what shape is the batched output? Third: two linear layers sit back to back with no nonlinearity between them. Why does one matrix do the same job? Pause here if you want to work it out.
+
+[13:49]
+Here's the answer. W is two by three: d-out rows, d columns. The batched output is ten by two: ten rows, one per token, two numbers each. And the two layers collapse because their matrices multiply into one matrix, so the stack computes the same map as a single layer. If you got all three, you can read the shape of any layer in any model.
+
+[14:12]
+Here's what to try this week. One: write down a two by three and a three by two matrix of your own and multiply them both ways. Check the shapes before you check the numbers. Two: in the notebook, change one dial in W and watch which outputs move. Three: build your own two-layer collapse, W prime times W, and confirm it on cat. The one mistake to avoid: counting a stack of linear layers as depth. Without a bend between them, it's one layer wearing a costume.
+
+[14:42]
+Next time, episode four. The layer hands us numbers, and we need them to become probabilities, the kind we saw in episode one. That's softmax. Then we measure how surprised a model is by what it reads, which is entropy, and the number every lab reports, perplexity. So tell me in the comments: which one trips you up more, remembering the shape rule, or remembering that order matters? The notebook and every source are in the description. Subscribe so you don't miss episode four, and I'll see you there.
+

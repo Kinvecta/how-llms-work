@@ -116,6 +116,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 3, Matrices as Machines: stack the word vectors into a table, and the table becomes a machine. Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** [Episode 3, Matrices as Machines](../Episode%2003%20-%20Matrices%20as%20Machines/): stack the word vectors into a table, and the table becomes a machine.
 
 [← Back to the course](../README.md)
