@@ -119,6 +119,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 2, Vectors: the word "cat" as a list of numbers, and why "close in space" can mean "similar in meaning." Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** [Episode 2, Numbers as Geometry: Vectors](../Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/): the word "cat" as a list of numbers, and why "close in space" can mean "similar in meaning."
 
 [← Back to the course](../README.md)

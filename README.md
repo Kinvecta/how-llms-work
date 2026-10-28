@@ -19,7 +19,7 @@
 
 <p align="center">
   <a href="https://www.youtube.com/playlist?list=PLAw1yNagEJRM"><img alt="YouTube playlist" src="https://img.shields.io/badge/YouTube-playlist-red?logo=youtube&logoColor=white"></a>
-  <a href="https://youtu.be/zB1HGmqiRDM"><img alt="Series trailer" src="https://img.shields.io/badge/watch-trailer-red?logo=youtube&logoColor=white"></a>
+  <a href="https://youtu.be/rXTCgq-qoJA"><img alt="Series trailer" src="https://img.shields.io/badge/watch-trailer-red?logo=youtube&logoColor=white"></a>
   <a href="#course"><img alt="15 companion notebooks" src="https://img.shields.io/badge/notebooks-15-F9AB00?logo=jupyter&logoColor=white"></a>
   <a href="course/"><img alt="30 episodes in 6 parts" src="https://img.shields.io/badge/course-30%20episodes%20%C2%B7%206%20parts-FFC400"></a>
   <a href="docs/glossary.md"><img alt="Glossary and notation" src="https://img.shields.io/badge/glossary-%26%20notation-8FB4E8"></a>
@@ -28,7 +28,7 @@
 </p>
 
 > [!NOTE]
-> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. The notebooks for Episodes 2–15 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
+> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episode 2 is out too, with its page, slides, transcript, brief and notebook. The notebooks for Episodes 3–15 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
 
 <details>
 <summary><b>Table of Contents</b></summary>
@@ -86,7 +86,7 @@
 
 Start with Episode 1, or the 4-minute trailer for the whole plan. New episodes are added to the same playlist.
 
-[Episode 1](https://youtu.be/ZJ4BbrnXBRo) · [trailer](https://youtu.be/zB1HGmqiRDM) · [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM)
+[Episode 1](https://youtu.be/ZJ4BbrnXBRo) · [Episode 2](https://youtu.be/onxRHQlY-TI) · [trailer](https://youtu.be/rXTCgq-qoJA) · [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM)
 
 </td>
 <td width="33%" valign="top">
@@ -112,12 +112,12 @@ Each episode has slides as a PDF, the transcript, a research brief with every so
 
 ## course
 
-Episode 1 is out. The notebooks for Episodes 2–15 are ready ahead of their videos, and each episode's folder (slides, transcript, research brief, page) is added here when its video is released. The full plan is in the [syllabus](course/).
+Episodes 1 and 2 are out, with their pages here. The notebooks for Episodes 3–15 are ready ahead of their videos, and each episode's folder (slides, transcript, research brief, page) is added here when its video is released. The full plan is in the [syllabus](course/).
 
 | **#** | **episode** | **watch** | **notebook** | **materials** |
 |:--:|---|---|---|---|
 | **1** | **[What an LLM Really Is](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/)**<br><sub>Part I · 12:20</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/ZJ4BbrnXBRo) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/transcript/Episode%2001%20-%20What%20an%20LLM%20Really%20Is%20-%20transcript.txt) |
-| **2** | **Numbers as Geometry: Vectors**<br><sub>Part I · Words as lists of numbers; dot product, length, cosine similarity</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2002%20-%20Vectors.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2002%20-%20Vectors.ipynb) | |
+| **2** | **[Numbers as Geometry: Vectors](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/)**<br><sub>Part I · 13:05 · Words as lists of numbers; dot product, length, cosine similarity</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/onxRHQlY-TI) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/transcript/Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors%20-%20transcript.txt) |
 | **3** | **Matrices as Machines**<br><sub>Part I · A matrix as a machine that maps vectors; weights and biases</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2003%20-%20Matrices.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2003%20-%20Matrices.ipynb) | |
 | **4** | **Probability, Entropy and Perplexity**<br><sub>Part I · Distributions, softmax, surprise, cross-entropy and perplexity</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2004%20-%20Probability%20Entropy%20Perplexity.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2004%20-%20Probability%20Entropy%20Perplexity.ipynb) | |
 | **5** | **Calculus for Learning**<br><sub>Part I · Derivatives, the gradient and the chain rule, as the tools learning needs</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2005%20-%20Calculus%20for%20Learning.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2005%20-%20Calculus%20for%20Learning.ipynb) | |
@@ -233,9 +233,18 @@ Watch in order in the [YouTube playlist](https://www.youtube.com/playlist?list=P
 </td>
 </tr>
 <tr>
-<td width="40%"><a href="https://youtu.be/zB1HGmqiRDM"><img src="docs/assets/trailer-thumbnail.png" width="100%" alt="Watch the series trailer"></a></td>
+<td width="40%"><a href="https://youtu.be/onxRHQlY-TI"><img src="Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/thumbnail.png" width="100%" alt="Watch Episode 2: Numbers as Geometry: Vectors"></a></td>
+<td valign="top">
+<b><a href="https://youtu.be/onxRHQlY-TI">Episode 2 · Numbers as Geometry: Vectors</a></b><br>
+<sub><b>Length:</b> 13:05 · <b>Part I:</b> Foundations · <a href="Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/">Materials&nbsp;→</a></sub>
+<p>Three words: cat, mat, tired. Which two are more alike? A model can't look it up; it has a list of numbers for every word and one calculation. We do that calculation by hand: the dot product, the norm, cosine similarity and the scaling test that shows why we divide, then the two places it misleads you, the king − man + woman result and the "close means similar" myth.</p>
+<p><b>The idea to keep:</b> <i>Cosine similarity keeps direction and drops length. It is a measuring stick, and a few large coordinates can bend it.</i></p>
+</td>
+</tr>
+<tr>
+<td width="40%"><a href="https://youtu.be/rXTCgq-qoJA"><img src="docs/assets/trailer-thumbnail.png" width="100%" alt="Watch the series trailer"></a></td>
 <td width="60%" valign="top">
-<b><a href="https://youtu.be/zB1HGmqiRDM">Series trailer · From Math to Transformers</a></b><br>
+<b><a href="https://youtu.be/rXTCgq-qoJA">Series trailer · From Math to Transformers</a></b><br>
 <sub><b>Length:</b> 3:54 · the plan for all six parts</sub>
 <p>A four-minute tour of the whole series, set to an original song: next-token prediction, vectors, softmax, gradient descent, backpropagation, attention and the transformer, with one running sentence through it all.</p>
 </td>
@@ -255,7 +264,7 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
 python tools/check_notebooks.py --fast
-# PASS  notebooks/Episode 02 - Vectors.ipynb  (1 s)
+# PASS  Episode 02 - Numbers as Geometry Vectors/notebook.ipynb  (1 s)
 # ...
 # 8 passed, 0 failed, 7 skipped
 python tools/check_notebooks.py "Episode 01 - What an LLM Really Is/notebook.ipynb"
@@ -268,7 +277,7 @@ python tools/check_notebooks.py "Episode 01 - What an LLM Really Is/notebook.ipy
 |---|---|
 | Reproduce the cold open, the prefix table and the chain rule | [Episode 1 notebook](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) |
 | Change the prompt and see how sure GPT-2 is | the last cell of the Episode 1 notebook |
-| Get ahead: dot products and cosine similarity | [Episode 2 notebook](notebooks/Episode%2002%20-%20Vectors.ipynb) |
+| Get ahead: dot products and cosine similarity | [Episode 2 notebook](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) |
 
 ## teach it
 
@@ -304,7 +313,7 @@ Because it is open, small and well documented, so every number in the video can 
 <details>
 <summary><b>When do the next episodes come out?</b></summary>
 
-As they are finished. The notebooks for Episodes 2–15 are already here. Subscribe to the [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) or watch this repository's releases to hear about each one.
+As they are finished. The notebooks for Episodes 3–15 are already here. Subscribe to the [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) or watch this repository's releases to hear about each one.
 </details>
 
 <details>
@@ -335,7 +344,8 @@ Used the series in a class, a study group, or to build something? Share it in [D
 | Folder | What it is |
 |---|---|
 | [`Episode 01 - What an LLM Really Is`](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) |
-| [`notebooks/`](notebooks/) | Companion notebooks for Episodes 2–15, ready ahead of their videos |
+| [`Episode 02 - Numbers as Geometry Vectors`](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) |
+| [`notebooks/`](notebooks/) | Companion notebooks for Episodes 3–15, ready ahead of their videos |
 | [`course/`](course/) | Syllabus: all 30 episodes, six parts, outcomes |
 | [`docs/`](docs/) | [Glossary and notation](docs/glossary.md) and the README's images |
 | [`tools/`](tools/) | `check_notebooks.py`, which runs every notebook and its asserts |

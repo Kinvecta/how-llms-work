@@ -1,0 +1,73 @@
+Episode 2: Numbers as Geometry: Vectors
+How Large Language Models Work: From Math to Transformers
+Narrated by Mark (ElevenLabs clone of his own voice)
+
+[0:08]
+Three words. Cat. Mat. Tired. Which two are more alike? You probably said cat and mat. Two things you can touch, one sitting on the other. Tired is a feeling. Now ask a language model the same question. It has no dictionary entry for "alike." It has no definition of "cat." What it has is a list of numbers for every word, and one calculation that turns two of those lists into a single score. By the end of this episode you'll be able to do that calculation by hand, say exactly what it measures, and know the two places where it quietly lies to you.
+
+[0:44]
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode two: vectors. Four parts today. What a vector is, and the two ways to read one. The dot product and the norm, the two measurements everything else is built from. Cosine similarity, the score that says "alike." And then where it breaks: a famous analogy that is less reliable than it looks, and a myth about "close in space." Every number you'll see is in a companion notebook you can run yourself. Link in the description.
+
+[1:16]
+Part one. A vector is an ordered list of numbers. That's the whole definition. We'll write vectors as lowercase letters, a and b, and the number of entries is the dimension, written d. Here's our cat. Three numbers: one, one, zero. You can read that list two ways. As a point: go one step along the first axis, one along the second, none along the third, and mark the spot. Or as an arrow, from the origin out to that point. Same numbers, two pictures. The point tells you where the word lives. The arrow tells you which way it points, and we'll use both.
+
+[1:50]
+Mat is one, zero, zero: one step along the first axis and nothing else. Tired is zero, zero, one: all of it on the third axis. Three words, three arrows, and d equals three.
+
+[2:03]
+Before we go further, one honest warning. Our cat has three numbers, and I chose them by hand so the pictures fit on a screen. Real word vectors are nothing like that. The twenty thirteen word2vec paper tested vectors from twenty dimensions up to a thousand. The models you hear about, BERT, GPT-two, use seven hundred and sixty-eight numbers per token. And nobody types those numbers in. They are learned from text, by the training process we'll build over the next ten episodes. So every arrow I draw today is a teaching aid. There is no picture of seven hundred and sixty-eight dimensions. The arithmetic, though, is exactly the same, just with longer lists.
+
+[2:42]
+Part two: the dot product. Take two vectors of the same length. Multiply the matching entries, first with first, second with second, third with third. Then add the results. That's it. Written out: a dot b equals the sum over i of a sub i times b sub i. Cat is one, one, zero. Mat is one, zero, zero. One times one is one. One times zero is zero. Zero times zero is zero. Add them: cat dot mat is one. Now cat and tired. Tired is zero, zero, one. One times zero, one times zero, zero times one. All zeros. Cat dot tired is zero. Already a difference. Hold on to those two numbers.
+
+[3:24]
+So what does that number mean? Here's the geometric version of the same formula. If phi is the angle between the two arrows, then a dot b equals the length of a, times the length of b, times the cosine of phi. Read it as a projection. Drop one arrow straight down onto the other. The dot product is how far that shadow reaches along the first arrow, times the first arrow's length. And the sign tells you the relationship. Point roughly the same way: positive. Perpendicular: zero. Point against each other: negative. When we get to attention in episode seventeen, that one sentence is the whole mechanism.
+
+[4:00]
+Here's the picture I keep in my head. Take the two arrows outside at noon. The sun is so far away that its rays arrive parallel, so every point drops straight down onto the ground. Lay the first arrow flat along the ground. The second arrow casts a shadow onto it. The shadow is the projection. Its length, with a plus or minus depending on which way it falls, times the length of the arrow on the ground, is the dot product. Why the sun and not a flashlight? A flashlight is a point of light, so its shadows stretch the farther you hold it. The sun's don't. Parallel light is what keeps the geometry honest, and the dot product is parallel light.
+
+[4:40]
+One more measurement: the norm. The norm of a vector is its length, and the dot product gives it to you for free. Dot a vector with itself, take the square root. The norm of a is the square root of a dot a. Cat: one squared plus one squared plus zero squared is two. Square root of two, about one point four one. Mat: one, zero, zero. Norm one. Tired: norm one. Three arrows, two lengths. And that length is about to cause a problem.
+
+[5:11]
+Part three: cosine similarity. The dot product mixes two things together, direction and length. If you want only direction, divide the lengths out. Cosine of phi equals a dot b, divided by the norm of a times the norm of b. The result always lands between minus one and one. One means the arrows point the same way. Zero means perpendicular. Minus one means opposite. And it no longer cares how long either arrow is. Our numbers. Cat and mat: one, divided by one point four one times one. About zero point seven one. That's a forty-five degree angle. Cat and tired: zero divided by anything is zero. Ninety degrees. Cat and mat lean toward each other. Cat and tired are at right angles.
+
+[5:58]
+Now the test that shows why the division matters. Make a new vector, cat prime: three, three, zero. It points exactly where cat points. It's just three times longer. Maybe the word showed up more often in training. Maybe a different scale. Doesn't matter. Cat prime dot mat: three times one, three times zero, zero. Three. The dot product tripled. Nothing about the meaning changed, and the score tripled. If the dot product were our similarity score, a longer arrow would look like a closer meaning.
+
+[6:34]
+Now the cosine. Three, divided by the norm of cat prime, which is three times root two, times one. Three over three root two. Zero point seven one. Exactly what it was. The cosine saw the same direction and gave the same answer. That is the entire reason cosine, not the raw dot product, became the standard way to ask "how alike."
+
+[6:57]
+So here's what the Math Lab tells us. Cat and mat share an axis, the "concrete thing" axis I invented, so their arrows lean the same way and their cosine is high. Cat and tired share no axis, so they sit at a right angle, cosine zero. But remember, I named those axes. A real model never does. It learns a few hundred directions from text, and nothing labels them "living" or "feeling." The directions are just whatever helped predict the next token. That's what makes the next part remarkable, and also what makes it fragile. If this is the clearest you've seen the dot product explained, subscribe. The whole series is built one piece like this at a time.
+
+[7:39]
+Part four: where does the structure come from, and where does it break? The idea behind learned word vectors is sixty years older than the models. The linguist Zellig Harris proposed in nineteen fifty-four that words that occur in similar contexts tend to have similar meanings. It's called the distributional hypothesis. Vector models are that hypothesis made numerical. Words that keep showing up in the same company end up pointing the same way. A twenty ten survey by Turney and Pantel reports that the most popular way to compare two of these vectors is, exactly, the cosine. And when the word2vec authors list a word's nearest neighbors, they rank them by cosine too. So cat's neighbors are the words that kept appearing where cat appeared.
+
+[8:22]
+Then came the result everyone remembers. In twenty thirteen, Mikolov, Yih and Zweig took the vector for king, subtracted man, added woman, and found that the result lands very close to queen. Picture a parallelogram. The arrow from man to woman, slid over to start at king, points at queen. The method is simple: compute woman minus man plus king, then return whichever word's vector has the highest cosine with that point. It rests on one assumption. Every pair of words that shares a relationship, male to female, is separated by roughly the same offset. And remember: this is a two-dimensional cartoon of vectors that have hundreds of dimensions.
+
+[9:04]
+Now the fine print, because this result gets oversold. Even in the original paper, the model answered almost forty percent of eight thousand syntactic questions correctly. Impressive for twenty thirteen. Not magic. Later work went after the test itself. Tal Linzen argued in twenty sixteen that the cosine-based test mixes two things together: whether the offsets are really consistent, and which words happen to be neighbors of the target. And in twenty seventeen, Rogers, Drozd and Li argued that the offset method leans on plain vector similarity, so part of what looks like reasoning about relations is similarity doing the work. The parallelogram is a real pattern. It is not a law.
+
+[9:45]
+Which brings us to the myth: close vectors mean similar meaning. The case for it is everything we just saw. Similar contexts, similar vectors, cosine finds the neighbors. Here's the case against. Kawin Ethayarajh looked inside GPT-two in twenty nineteen and found that in its last layer, two random words have, on average, almost perfect cosine similarity. Random words.
+
+[10:10]
+In twenty twenty-one, Timkey and van Schijndel found out why. A small number of rogue dimensions, often just one to three out of seven hundred and sixty-eight, dominate the measure. A few huge coordinates swamp everything else, and cosine reads two unrelated words as nearly identical. So cosine similarity is a useful measuring stick, but in some models a few large coordinates can bend it. Close is a tendency. It is not a guarantee.
+
+[10:39]
+Let's put it back together. Words become vectors: ordered lists of numbers, read as points or arrows. The dot product multiplies matching entries and adds, and it measures alignment scaled by length. The norm is a vector's length, the square root of its dot product with itself. Cosine similarity divides the lengths out and keeps only direction. Similar contexts tend to produce similar vectors, which is where the analogy result comes from. And cosine is a proxy with known failure modes, so treat a high score as a lead, not a verdict. Everything else in this series, attention included, is going to come back to one of these four ideas.
+
+[11:18]
+One question to take with you, using our toy vectors. First: which pair has the larger cosine, cat and mat, or cat and tired? Second: if we swap cat for cat prime, three, three, zero, which quantity changes: the dot product with mat, or the cosine with mat? Pause here if you want to work it out. You have everything you need: the three vectors, the dot product, the norm, and the cosine formula.
+
+[11:43]
+Here's the answer. Cat and mat, zero point seven one against zero. And when cat becomes cat prime, the dot product with mat changes, from one to three. The cosine stays at zero point seven one. If you got both, you already understand the one calculation that every similarity search, every embedding database, and every attention head is built on.
+
+[12:05]
+Here's what to try this week. One: do the three dot products from today on paper, with no calculator. Two: open the companion notebook and change one axis of cat. Watch which numbers move and which don't. Three: find two words you'd call unrelated and give them vectors that still score a high cosine. It's easier than it should be, and that is the lesson. The one mistake to avoid: reading a cosine score as a meaning score. It's an angle. Nothing more.
+
+[12:36]
+Next time, episode three. We take all the word vectors in a sentence and stack them into a table. That table is a matrix, and a matrix is a machine: numbers go in, transformed numbers come out. Every layer of a transformer is one of those machines. So tell me in the comments: which two words would you test first, and what cosine do you expect? The notebook and every source are in the description. Subscribe so you don't miss episode three, and I'll see you there.
+

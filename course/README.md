@@ -2,7 +2,7 @@
 
 **How Large Language Models Work: From Math to Transformers** is a free video course in 30 episodes and six parts. It starts with "what is an LLM?" and builds every piece from the math up, to a working transformer and how models are trained, scaled and evaluated.
 
-[YouTube playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) · [series trailer](https://youtu.be/zB1HGmqiRDM) · [back to the README](../README.md)
+[YouTube playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) · [series trailer](https://youtu.be/rXTCgq-qoJA) · [back to the README](../README.md)
 
 ## How every episode works
 
@@ -29,7 +29,7 @@ Curious learners, students and professionals who want to understand LLMs past th
 | # | Part | Episode | Notebook | Video |
 |:--:|:--:|---|---|---|
 | 1 | I | **[What an LLM Really Is](../Episode%2001%20-%20What%20an%20LLM%20Really%20Is/)**<br><sub>The model as a function from the text so far to a probability for every next token; generation as a loop; how the dials get set; three claims checked</sub> | [notebook](../Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) | [![Watch](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/ZJ4BbrnXBRo) |
-| 2 | I | **Numbers as Geometry: Vectors**<br><sub>Words as lists of numbers; dot product, length, cosine similarity</sub> | [notebook](../notebooks/Episode%2002%20-%20Vectors.ipynb) | video in production |
+| 2 | I | **[Numbers as Geometry: Vectors](../Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/)**<br><sub>Words as lists of numbers; dot product, length, cosine similarity</sub> | [notebook](../Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) | [video](https://youtu.be/onxRHQlY-TI) |
 | 3 | I | **Matrices as Machines**<br><sub>A matrix as a machine that maps vectors; weights and biases</sub> | [notebook](../notebooks/Episode%2003%20-%20Matrices.ipynb) | video in production |
 | 4 | I | **Probability, Entropy and Perplexity**<br><sub>Distributions, softmax, surprise, cross-entropy and perplexity</sub> | [notebook](../notebooks/Episode%2004%20-%20Probability%20Entropy%20Perplexity.ipynb) | video in production |
 | 5 | I | **Calculus for Learning**<br><sub>Derivatives, the gradient and the chain rule, as the tools learning needs</sub> | [notebook](../notebooks/Episode%2005%20-%20Calculus%20for%20Learning.ipynb) | video in production |
@@ -47,7 +47,7 @@ Curious learners, students and professionals who want to understand LLMs past th
 | 23–26 | V | **Building and Scaling a Model**<br><sub>Pretraining, scaling laws, training at scale, and post-training (instruction tuning, human feedback, reasoning RL)</sub> | with each episode | planned |
 | 27–30 | VI | **Beyond the Basics**<br><sub>New architectures, LLM systems, how LLMs fail (memorization included), and evaluation and governance</sub> | with each episode | planned |
 
-Episode topics and order after Episode 15 may change during production. The notebooks for Episodes 2–15 are published ahead of the videos; their numbers match the episode research, and the videos will follow.
+Episode topics and order after Episode 15 may change during production. The notebooks for Episodes 3–15 are published ahead of the videos; their numbers match the episode research, and the videos will follow.
 
 ## The six parts
 
