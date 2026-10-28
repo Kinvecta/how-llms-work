@@ -1,7 +1,7 @@
 # Everything the companion notebooks import. Colab already has most of these.
 # Needs Python 3.12 or newer (numpy 2.5 requires it).
 # CPU-only PyTorch is enough (see the README for the one-line install).
-numpy==2.5.3
+numpy==2.5.4
 matplotlib==3.11.2
 torch==2.14.1
 transformers==5.21.0
