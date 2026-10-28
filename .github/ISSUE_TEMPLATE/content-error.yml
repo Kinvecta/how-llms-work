@@ -1,0 +1,50 @@
+name: Content error report
+description: A number, equation, slide, transcript or notebook cell is wrong or out of date.
+title: "[Content] "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. This repository is not actively maintained, so reports are read on a best-effort basis. Please do not include secrets or anyone's personal data. For security problems, use private vulnerability reporting instead (see SECURITY.md).
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where is it?
+      options:
+        - Episode 1 (video, slides, brief or transcript)
+        - Episode 1 notebook
+        - A notebook in notebooks/ (Episodes 2-15)
+        - Syllabus (course/)
+        - Root README or docs/
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: File and place
+      description: File name plus slide number, timestamp, notebook step or line.
+      placeholder: "e.g. Episode 1 slides.pdf, page 7; or notebook Step 4"
+    validations:
+      required: true
+  - type: textarea
+    id: says
+    attributes:
+      label: What it says
+    validations:
+      required: true
+  - type: textarea
+    id: should
+    attributes:
+      label: What it should say, and why
+      description: A source (paper, textbook, documentation) or a notebook output helps. If a notebook assert fails, paste the output and your library versions.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Checks
+      options:
+        - label: This report contains no secrets or personal data.
+          required: true

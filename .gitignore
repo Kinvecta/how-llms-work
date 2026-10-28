@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.env
+.env.*
+*.env
+*.log
+# model weights and caches the notebooks download
+gpt2_weights/
+*.safetensors
+*.bin
+*.pt
+.cache/
+# media stays on YouTube
+audio/
+video/
+*.mp4
+*.wav
+*.mp3
+*.m4a
+*.pptx
+wikitext_data/
+*.parquet
+.ruff_cache/

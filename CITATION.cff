@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use or adapt this course, please cite it as below."
+type: dataset
+title: "How Large Language Models Work: From Math to Transformers"
+abstract: "A free video course that builds large language models up from the math: vectors, probability, calculus, neural networks, attention and the transformer, with a runnable companion notebook and a sourced research brief for every episode. One running sentence, \"The cat sat on the mat because it was tired.\", carries through the whole series."
+authors:
+  - family-names: Espinoza
+    given-names: Mark D.
+    affiliation: Kinvecta
+version: "0.1"
+date-released: 2026-10-27
+license: CC-BY-4.0
+repository-code: "https://github.com/Kinvecta/how-llms-work"
+url: "https://kinvecta.ai"
+keywords:
+  - large language models
+  - transformers
+  - machine learning
+  - deep learning
+  - next-token prediction
+  - mathematics for machine learning
+  - GPT-2

@@ -1,0 +1,27 @@
+title: "[Show and tell] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing how you used the course. Please don't post secrets, internal documents or anyone's personal data.
+  - type: textarea
+    id: what
+    attributes:
+      label: How did you use it?
+      description: Self-study, a class, a study group, a workshop. Which episodes?
+    validations:
+      required: true
+  - type: input
+    id: audience
+    attributes:
+      label: Who was in the room?
+      placeholder: e.g. a university class, a study group, developers
+  - type: textarea
+    id: changed
+    attributes:
+      label: One thing that finally clicked
+  - type: textarea
+    id: link
+    attributes:
+      label: Link or screenshot (optional)

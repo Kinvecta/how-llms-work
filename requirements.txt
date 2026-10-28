@@ -1,0 +1,14 @@
+# Everything the companion notebooks import. Colab already has most of these.
+# CPU-only PyTorch is enough (see the README for the one-line install).
+numpy==2.5.3
+matplotlib==3.11.2
+torch==2.14.1
+transformers==5.21.0
+huggingface_hub==2.3.0
+safetensors==0.8.0
+tiktoken==0.14.0
+scikit-learn==1.9.1
+# Run the notebooks from the command line (tools/check_notebooks.py)
+nbclient==0.11.0
+nbformat==5.11.1
+ipykernel==7.4.0

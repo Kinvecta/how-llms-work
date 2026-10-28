@@ -1,0 +1,62 @@
+How Large Language Models Work · Episode 1 · What an LLM Really Is
+Transcript. Narrated by Mark. Video: https://youtu.be/ZJ4BbrnXBRo
+
+[0:09] The cat sat on the…
+Here's a sentence. "The cat sat on the." Five words... and then a gap. I gave those five words to a small language model, one you can download and run yourself, and asked it one question: what comes next? It didn't answer with a word. It answered with a list. Floor, seven point six percent. Bed, six and a half. Couch, five point four. Ground, five point two. And it kept going, down through fifty thousand possible next pieces of text, with a number next to every single one. Mat, the word you were probably expecting, is way down the list. Rank thirty-one. Less than half a percent. Then it picks one, adds it to the sentence, and asks the same question again. "The cat sat on the floor, and the cat was still asleep." So... where did those numbers come from? There's no list of cat sentences stored anywhere in that model. Nothing was looked up. By the end of this episode you'll know exactly what happened in there, and you'll have the one idea that the next twenty-nine episodes are built on. This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode one: what an LLM really is.
+
+[1:27] What is on your disk?
+Let's start with the most literal answer possible. If you download an open model, say Llama two, seventy billion, what lands on your disk is two files. One is big. About a hundred and forty gigabytes. It's nothing but numbers. Seventy billion of them, each stored in two bytes. Those numbers are the parameters, and in this series we'll write all of them together as one Greek letter, theta. The other file is small. Andrej Karpathy, who led AI at Tesla and was a founding member of OpenAI, makes the point in his twenty twenty-three intro talk: the code to run the network is about five hundred lines of C, with no other dependencies. Everything the model "knows" is in the numbers, not the code.
+
+[2:09] An LLM is a function
+So here's the picture to keep. An LLM is a function. In goes the text so far. Out comes a probability for every possible next piece of text. The parameters, theta, are the dials inside that function. Training is the process that set the dials. Running the model, which is what you do when you chat with one, just turns the crank.
+
+[2:29] Tokens and vocabulary
+Two words of vocabulary before the math, because they'll be with us for thirty episodes. First, the model doesn't see words. It sees tokens: small chunks of text, usually a word or a piece of a word, with the space attached. Our sentence is eleven tokens, and the final period is one of them. Second, the set of every token the model can ever output is called the vocabulary, and we write it with a capital V. For the model I ran, V holds fifty thousand two hundred and fifty-seven tokens. That's why the list in the cold open was so long: one number for each.
+
+[3:05] The one equation
+Now the equation. This is the only one in the episode, and it's the one everything else serves. We number the tokens in a sentence: x one, x two, up to x t. Everything before position t, we write as x less than t, the prefix. And the model's output is a probability for the next token, given the prefix. Here it is. p sub theta, of x t, given x less than t. Read it out loud: "the probability, according to the dials theta, of token t, given everything before it." That's the whole model. Not a metaphor for it. The thing itself.
+
+[3:46] A growing prefix
+Watch it on our sentence. After "The cat sat," the model gives "on" twenty-two percent. After "The cat sat on," it gives "the" forty-five percent. After "because," it gives "it" twenty-two percent, and after "it," it gives "was" thirty-two percent. Each time, the prefix grew by one token and the whole distribution was recomputed from scratch.
+
+[4:11] The generation loop
+Generation is that same equation run in a loop. Predict the distribution. Pick a token from it. Append the token to the prefix. Repeat. We write "pick a token from the distribution" with a little tilde: x t is drawn from p theta. Four steps, over and over, is all that's happening when a chatbot "types" its answer to you.
+
+[4:32] Random draws
+And because the pick is random, you don't always get the same text. Here are three continuations the same model gave me from the same five words. "The cat sat on the far side of the door with its head." "The cat sat on the bench." And my favorite: "The cat sat on the ceiling when it died, said Lew Gold." Same dials, same prefix, different draws.
+
+[4:57] A whole sentence
+One more line for the Math Lab, and then we're done with equations. If you want the probability of a whole sentence, you multiply the per-token probabilities together: the probability of the first token, times the probability of the second given the first, times the third given the first two, and so on. That's just the chain rule of probability, and we'll meet it properly in episode four. For our cat sentence, GPT-2 small gives a number around ten to the minus seventeen. Tiny, because every sentence is one of an astronomical number of possible sentences. Later we'll learn how to turn a number like that into a score we can actually compare.
+
+[5:36] Why prediction is difficult
+At this point a reasonable person asks: predicting the next word? That's it? That sounds like autocomplete. It is autocomplete. The surprise is how much you have to know to do it well. In nineteen fifty-one, Claude Shannon measured how predictable English is by having people guess the next letter of a text. His estimate: with a long context, English carries somewhere between zero point six and one point three bits per letter, meaning roughly three quarters of the letters are, in principle, predictable from what came before. But to actually make those predictions, you need grammar, because "the cat sat on" is followed by a noun phrase. You need facts, because "the capital of Texas is" has one good continuation. You need to track a story, because "it" in our sentence means the cat. And you need to know that a question is usually followed by an answer. Prediction is the goal. Everything else is what the goal forces the model to learn.
+
+[6:35] How the dials get set
+How do the dials get set? Three stages, and we'll spend a whole part of the series on each. Stage one is pretraining. Take an enormous pile of text, and at every position, ask the model to predict the next token. The text supplies its own answers, so nobody has to label anything. The model's guesses start out random, and over weeks of compute the dials turn until the guesses are good. That's episodes six through fourteen, plus twenty-three.
+
+[7:05] Post-training
+Stage two is post-training. A pretrained model continues text; it doesn't follow instructions. The twenty twenty-two InstructGPT paper from OpenAI set the template for fixing that. Hire about forty people to write good answers to about thirteen thousand prompts, and fine-tune on those. Then show the model's answers to those same people, have them rank between four and nine candidates per prompt, and train a second model to predict the rankings. Then let the first model practice against the second one's score, on about thirty-one thousand more prompts. That's episode twenty-six.
+
+[7:41] Reasoning and inference
+Newer models add a third stage: reinforcement learning on problems with checkable answers, like math and code. DeepSeek's R one paper reported that, with this stage alone, their model's score on a competition math benchmark went from about sixteen percent to seventy-one percent. Treat that as a twenty twenty- five development, not a universal recipe. And then inference, which is the stage you use. Running the finished dials, one token at a time. Every stage before it exists to make those tokens good.
+
+[8:14] Three claims checked
+Three things people say about these models. For each one I'll give you the strongest evidence on both sides, because none of them is settled. Myth one: it's a database that copies text. What's true: the model does reproduce some training text word for word. Memorization is real, and episode twenty-nine is about it. What's wrong: there's no corpus in there to look up. A hundred and forty gigabytes of numbers cannot store the internet. Training compressed patterns into dials, and sometimes a pattern reproduces exactly what it came from. Remember "mat" at rank thirty-one. If our sentence were stored somewhere, it would have come back.
+
+[8:57] Othello: an internal board
+Myth two: it understands nothing. Here's the evidence that something is going on inside. Researchers at Harvard, MIT and Northeastern trained a small GPT on transcripts of Othello games, just lists of moves, no rules, no board. Then they looked inside. From the model's internal activations, a probe could reconstruct the current board with one point seven percent error, versus about twenty-six percent for an untrained network. The model built a board it was never shown. A follow-up found that if you label each square "mine" or "yours" instead of black or white, the board is encoded so simply that you can edit it with vector arithmetic and the model's next move changes to match.
+
+[9:41] The taxi map counterexample
+And here's the evidence for the other side. A team at Harvard, MIT and Cornell trained transformers on turn-by-turn taxi directions in Manhattan. Next-turn prediction was essentially perfect. But when they reconstructed the street map the models had implicitly learned, it bore little resemblance to Manhattan, and adding small random detours made performance collapse. So: models can build real internal structure from text alone. And strong prediction does not guarantee a coherent model of the world.
+
+[10:13] Fluency and understanding
+Myth three: it thinks like a person. The best-known case against this is the twenty twenty-one paper that coined the phrase "stochastic parrot." Its authors describe a language model as a system for haphazardly stitching together sequences of linguistic forms it has observed in its training data, according to probabilistic information about how they combine, but without any reference to meaning. That's one serious position. The Othello result is a serious reply. Fluency is not thinking, and whether these systems understand anything is a question researchers still argue about. I'm not going to settle it for you in episode one. I'm going to give you the math so you can weigh the arguments yourself.
+
+[10:55] Recap
+So, what is an LLM? A file of dials and a bit of code. A function from the text so far to a probability for every token in the vocabulary. Generation is that function in a loop: predict, pick, append, repeat. The dials are set in three stages: pretraining, post-training, and a newer reasoning stage. And none of the three myths survives contact with the evidence in one piece.
+
+[11:24] Pause and think
+One question to take with you. If a model is trained only to predict the next token, why might it still learn to answer questions? Pause here if you want to think about it. Here's my answer. Text is full of questions followed by answers. The cheapest way to predict what comes after a question, across millions of them, is to learn the structure that produces good answers. Prediction is the objective. Capability is what the objective rewards.
+
+[11:55] Next: vectors
+Next time, episode two. We take the word "cat" and turn it into a list of numbers, and we see why "close in space" can mean "similar in meaning." That's vectors, and it's the first piece of real math in the series. There's a companion notebook for this episode in the description, with the exact code that produced every number you saw today. Subscribe so you don't miss episode two, and I'll see you there.
