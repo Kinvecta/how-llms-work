@@ -13,7 +13,7 @@
   <a href="https://github.com/Kinvecta/how-llms-work/actions/workflows/security.yml"><img alt="Security" src="https://github.com/Kinvecta/how-llms-work/actions/workflows/security.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="license MIT" src="https://img.shields.io/badge/license-MIT-green"></a>
   <a href="LICENSE-CONTENT.md"><img alt="content CC BY 4.0" src="https://img.shields.io/badge/content-CC%20BY%204.0-lightgrey"></a>
-  <img alt="python 3.10 | 3.11 | 3.12 | 3.13" src="https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue">
+  <img alt="python 3.12 | 3.13" src="https://img.shields.io/badge/python-3.12%20%7C%203.13-blue">
   <a href="https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"></a>
 </p>
 
@@ -246,7 +246,7 @@ Watch in order in the [YouTube playlist](https://www.youtube.com/playlist?list=P
 
 Every notebook runs in **Google Colab** with no install: open it from the [course table](#course) and choose *Runtime → Run all*. The notebooks for Episodes 2–9 use only `numpy`; the ones that measure a real model download GPT-2 small (about 500 MB) once. A CPU is enough for all of them.
 
-**Locally** (Python 3.10+):
+**Locally** (Python 3.12+, the same as Colab):
 
 ```bash
 git clone https://github.com/Kinvecta/how-llms-work.git
@@ -364,7 +364,7 @@ This repository accompanies the videos. Episodes are added as they are released,
 - **Pull requests and issues may not get a response.** Fork the repository if you need changes.
 - **The notebooks download public model weights** from the Hugging Face Hub. Load weights only from sources you trust.
 
-Automated checks run on GitHub Actions: the notebooks on Python 3.10–3.13 (the model-download notebooks weekly), a secret scan of the full history (Gitleaks), a dependency audit (`pip-audit`), CodeQL code scanning, and Dependabot alerts. Passing checks lower the risk but do not prove the code is secure. To report a vulnerability, see [SECURITY.md](SECURITY.md).
+Automated checks run on GitHub Actions: the notebooks on Python 3.12 and 3.13 (the model-download notebooks weekly), a secret scan of the full history (Gitleaks), a dependency audit (`pip-audit`), CodeQL code scanning, and Dependabot alerts. Passing checks lower the risk but do not prove the code is secure. To report a vulnerability, see [SECURITY.md](SECURITY.md).
 
 ## license
 
