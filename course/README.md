@@ -31,7 +31,7 @@ Curious learners, students and professionals who want to understand LLMs past th
 | 1 | I | **[What an LLM Really Is](../Episode%2001%20-%20What%20an%20LLM%20Really%20Is/)**<br><sub>The model as a function from the text so far to a probability for every next token; generation as a loop; how the dials get set; three claims checked</sub> | [notebook](../Episode%2001%20-%20What%20an%20LLM%20Really%20Is/notebook.ipynb) | [![Watch](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/ZJ4BbrnXBRo) |
 | 2 | I | **[Numbers as Geometry: Vectors](../Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/)**<br><sub>Words as lists of numbers; dot product, length, cosine similarity</sub> | [notebook](../Episode%2002%20-%20Numbers%20as%20Geometry%20Vectors/notebook.ipynb) | [video](https://youtu.be/onxRHQlY-TI) |
 | 3 | I | **[Matrices as Machines](../Episode%2003%20-%20Matrices%20as%20Machines/)**<br><sub>A matrix as a machine that maps vectors; weights and biases</sub> | [notebook](../Episode%2003%20-%20Matrices%20as%20Machines/notebook.ipynb) | [video](https://youtu.be/RwVAxe58lqE) |
-| 4 | I | **Probability, Entropy and Perplexity**<br><sub>Distributions, softmax, surprise, cross-entropy and perplexity</sub> | [notebook](../notebooks/Episode%2004%20-%20Probability%20Entropy%20Perplexity.ipynb) | video in production |
+| 4 | I | **[Probability, Entropy and Perplexity](../Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/)**<br><sub>Distributions, softmax, surprise, cross-entropy and perplexity</sub> | [notebook](../Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/notebook.ipynb) | [video](https://youtu.be/WAzPH6pRwUc) |
 | 5 | I | **Calculus for Learning**<br><sub>Derivatives, the gradient and the chain rule, as the tools learning needs</sub> | [notebook](../notebooks/Episode%2005%20-%20Calculus%20for%20Learning.ipynb) | video in production |
 | 6 | II | **What Learning Means: Data, Models, Loss**<br><sub>Training data, a model with parameters, and a loss that scores it</sub> | [notebook](../notebooks/Episode%2006%20-%20Learning%20Loss.ipynb) | video in production |
 | 7 | II | **Gradient Descent: Walking Downhill**<br><sub>Following the gradient; learning rate; steps toward lower loss</sub> | [notebook](../notebooks/Episode%2007%20-%20Gradient%20Descent.ipynb) | video in production |
@@ -47,7 +47,7 @@ Curious learners, students and professionals who want to understand LLMs past th
 | 23–26 | V | **Building and Scaling a Model**<br><sub>Pretraining, scaling laws, training at scale, and post-training (instruction tuning, human feedback, reasoning RL)</sub> | with each episode | planned |
 | 27–30 | VI | **Beyond the Basics**<br><sub>New architectures, LLM systems, how LLMs fail (memorization included), and evaluation and governance</sub> | with each episode | planned |
 
-Episode topics and order after Episode 15 may change during production. The notebooks for Episodes 4–15 are published ahead of the videos; their numbers match the episode research, and the videos will follow.
+Episode topics and order after Episode 15 may change during production. The notebooks for Episodes 5–15 are published ahead of the videos; their numbers match the episode research, and the videos will follow.
 
 ## The six parts
 

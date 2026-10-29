@@ -131,6 +131,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 4, Probability, Entropy and Perplexity: the layer hands us numbers, softmax turns them into probabilities, and we measure how surprised a model is. Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** [Episode 4, Probability, Entropy and Perplexity](../Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/): the layer hands us numbers, softmax turns them into probabilities, and we measure how surprised a model is ([watch](https://youtu.be/WAzPH6pRwUc)).
 
 [← Back to the course](../README.md)
