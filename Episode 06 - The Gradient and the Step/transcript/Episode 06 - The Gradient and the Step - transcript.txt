@@ -13,7 +13,7 @@ Three parts. Partial derivatives and the gradient. Why the gradient points steep
 
 Part one: the gradient. A model has many numbers, not one. So we need slopes in many directions at once. The partial derivative with respect to z one measures how f changes when only z one moves, with everything else frozen. Collect all the partial derivatives into one vector, and that's the gradient.
 
-Here's your first real gradient, from last episode's softmax. You can't push one probability up by itself. Under softmax, if mat goes up, the others must go down, so the total stays one. So the knob we turn is the score. Do this calculation for all four words and the slopes are: mat, minus zero point seven zero. Floor, plus zero point two zero. Sofa, plus zero point one five. Other, plus zero point three five. They add to zero. Keep that pattern in mind. It comes back in episode thirteen, as backpropagation.
+Here's your first real gradient, from last episode's softmax. You can't push one probability up by itself. Under softmax, if mat goes up, the others must go down, so the total stays one. So the knob we turn is the score. Do this calculation for all four words and the slopes are: mat, minus zero point seven zero. Floor, plus zero point two zero. Sofa, plus zero point one five. Other, plus zero point three five. They add to zero. Keep that pattern in mind. It comes back in episode fourteen, as backpropagation.
 
 Our test landscape is a bowl. f of z one, z two equals z one squared, plus two z two squared. By the power rule, the partial in z one is two z one. The partial in z two is four z two, because of that two out front.
 
@@ -31,7 +31,7 @@ Part two. Why steepest? The slope in any unit direction a is the gradient dotted
 
 Three fine-print conditions. The function has to be smooth there. The gradient can't be zero: at a flat point it has no direction at all, and saddle points are flat too. And "steepest" assumes ordinary, Euclidean distance.
 
-Part three. The gradient step: move from z to z minus eta times the gradient. Eta is the step size. Episode eight will call it the learning rate. Goodfellow, Bengio and Courville put the catch plainly: this lowers the function for a small enough step.
+Part three. The gradient step: move from z to z minus eta times the gradient. Eta is the step size. Episode nine will call it the learning rate. Goodfellow, Bengio and Courville put the catch plainly: this lowers the function for a small enough step.
 
 So take a small one. Eta equals zero point one, from one, one. Eta times the gradient is zero point two, zero point four. Subtract: one minus zero point two is zero point eight. One minus zero point four is zero point six.
 

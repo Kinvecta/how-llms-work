@@ -1,8 +1,8 @@
 # Episode 6 · The Gradient and the Step
 
-[![Watch on YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/sxR34_sC0no) [![Open in Colab](https://img.shields.io/badge/open-Colab%20notebook-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2006%20-%20The%20Gradient%20and%20the%20Step/notebook.ipynb) [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](slides.pdf) [![Research brief](https://img.shields.io/badge/read-brief-blue)](research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](transcript/Episode%2006%20-%20The%20Gradient%20and%20the%20Step%20-%20transcript.txt) [![Short](https://img.shields.io/badge/watch-the%2047%20s%20Short-red?logo=youtube&logoColor=white)](https://youtu.be/QMFLrOGVr0o)
+[![Watch on YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/5emurxC67Mw) [![Open in Colab](https://img.shields.io/badge/open-Colab%20notebook-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2006%20-%20The%20Gradient%20and%20the%20Step/notebook.ipynb) [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](slides.pdf) [![Research brief](https://img.shields.io/badge/read-brief-blue)](research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](transcript/Episode%2006%20-%20The%20Gradient%20and%20the%20Step%20-%20transcript.txt) [![Short](https://img.shields.io/badge/watch-the%2047%20s%20Short-red?logo=youtube&logoColor=white)](https://youtu.be/QMFLrOGVr0o)
 
-<a href="https://youtu.be/sxR34_sC0no"><img src="thumbnail.png" width="560" alt="Watch Episode 6: The Gradient and the Step"></a>
+<a href="https://youtu.be/5emurxC67Mw"><img src="thumbnail.png" width="560" alt="Watch Episode 6: The Gradient and the Step"></a>
 
 **Length:** 11:31 · **Part I:** Foundations · **Math:** ∂f/∂z₁, ∇f, ∇f · a = ‖∇f‖ cos φ and z − η∇f · **Code:** NumPy and matplotlib, runs anywhere
 
@@ -74,7 +74,7 @@ You stand in a valley shaped like a bowl, at height 3. You take one step, straig
 | Directional derivative, D_a f | The slope in a unit direction a: ∇f · a = ‖∇f‖ cos φ |
 | Contour line | A curve where f has one value; on this bowl, ellipses around (0, 0) |
 | Gradient step | z → z − η∇f |
-| Step size, η | How far each step moves against the gradient; Episode 8 calls it the learning rate |
+| Step size, η | How far each step moves against the gradient; Episode 9 calls it the learning rate |
 | Curvature | How fast the slope itself changes; in f(η) = 3 − 20η + 36η² it is the 36η² term that makes big steps go uphill |
 | Gradient descent | Taking gradient steps over and over |
 
@@ -137,6 +137,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 7, What Learning Means: Data, Models, Loss: mat's surprisal is one term; training averages thousands of them into a single number, the loss. Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** Episode 7, What Learning Means, Part 1: The Loss: mat's surprisal is one term; training averages thousands of them into a single number, the loss. Its notebook is already in [`notebooks/`](../notebooks/).
 
 [← Back to the course](../README.md)

@@ -1,8 +1,8 @@
 # Episode 5 · Derivatives and the Chain Rule
 
-[![Watch on YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/ovpwjW2X9RE) [![Open in Colab](https://img.shields.io/badge/open-Colab%20notebook-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/notebook.ipynb) [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](slides.pdf) [![Research brief](https://img.shields.io/badge/read-brief-blue)](research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](transcript/Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule%20-%20transcript.txt) [![Short](https://img.shields.io/badge/watch-the%2041%20s%20Short-red?logo=youtube&logoColor=white)](https://youtu.be/VlrSOMDDYk0)
+[![Watch on YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/gYxNFd3bLk8) [![Open in Colab](https://img.shields.io/badge/open-Colab%20notebook-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/notebook.ipynb) [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](slides.pdf) [![Research brief](https://img.shields.io/badge/read-brief-blue)](research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](transcript/Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule%20-%20transcript.txt) [![Short](https://img.shields.io/badge/watch-the%2041%20s%20Short-red?logo=youtube&logoColor=white)](https://youtu.be/VlrSOMDDYk0)
 
-<a href="https://youtu.be/ovpwjW2X9RE"><img src="thumbnail.png" width="560" alt="Watch Episode 5: Derivatives and the Chain Rule"></a>
+<a href="https://youtu.be/gYxNFd3bLk8"><img src="thumbnail.png" width="560" alt="Watch Episode 5: Derivatives and the Chain Rule"></a>
 
 **Length:** 13:09 · **Part I:** Foundations · **Math:** f′(z), the power rule, the quotient rule and the calculus chain rule · **Code:** NumPy and matplotlib, runs anywhere
 
@@ -133,6 +133,6 @@ About 15 minutes.
 
 ---
 
-**Next:** [Episode 6, The Gradient and the Step](../Episode%2006%20-%20The%20Gradient%20and%20the%20Step/): a real model has millions of numbers, not one. We put all their slopes into one arrow, take a step downhill, and watch a step that's too big send us uphill, from 3 all the way to 19. ([watch](https://youtu.be/sxR34_sC0no), notebook in [`Episode 06 - The Gradient and the Step/`](../Episode%2006%20-%20The%20Gradient%20and%20the%20Step/)).
+**Next:** [Episode 6, The Gradient and the Step](../Episode%2006%20-%20The%20Gradient%20and%20the%20Step/): a real model has millions of numbers, not one. We put all their slopes into one arrow, take a step downhill, and watch a step that's too big send us uphill, from 3 all the way to 19. ([watch](https://youtu.be/5emurxC67Mw), notebook in [`Episode 06 - The Gradient and the Step/`](../Episode%2006%20-%20The%20Gradient%20and%20the%20Step/)).
 
 [← Back to the course](../README.md)
