@@ -3,7 +3,7 @@
 Usage:
     python tools/check_notebooks.py                 # all notebooks
     python tools/check_notebooks.py --fast          # skip notebooks that download model weights
-    python tools/check_notebooks.py notebooks/Episode\\ 05\\ -\\ Calculus\\ for\\ Learning.ipynb
+    python tools/check_notebooks.py notebooks/Episode\\ 07\\ -\\ Learning\\ Loss.ipynb
 """
 from __future__ import annotations
 

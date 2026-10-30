@@ -1,0 +1,72 @@
+How Large Language Models Work, Episode 6: Calculus for Learning, Part 2 (The Gradient and the Step)
+Narrated by Mark (AI voice clone of his own voice).
+
+You're standing in a valley shaped like a bowl, at height three. You want to get lower. So you take one step, straight downhill. And you land at height nineteen.
+
+Higher than where you started. Same direction, downhill. Just a bigger step. How does a step downhill take you up? That question is exactly what training a language model has to get right, millions of times.
+
+Last episode, we found the slope of mat's surprisal with respect to its score: minus zero point seven zero. One score, one slope. But a model has millions of numbers. Today we put all their slopes into one arrow, the gradient, step against it, and find exactly when that step backfires. By the end of this episode you'll compute a gradient by hand, test directions by hand, take two steps, and derive the curve that explains the jump to nineteen.
+
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode six: calculus for learning, part two.
+
+Three parts. Partial derivatives and the gradient. Why the gradient points steepest uphill. And the gradient step, with the curve that tells you how big is too big. Plus a myth about where the gradient points. Every number is in the companion notebook, linked in the description.
+
+Part one: the gradient. A model has many numbers, not one. So we need slopes in many directions at once. The partial derivative with respect to z one measures how f changes when only z one moves, with everything else frozen. Collect all the partial derivatives into one vector, and that's the gradient.
+
+Here's your first real gradient, from last episode's softmax. You can't push one probability up by itself. Under softmax, if mat goes up, the others must go down, so the total stays one. So the knob we turn is the score. Do this calculation for all four words and the slopes are: mat, minus zero point seven zero. Floor, plus zero point two zero. Sofa, plus zero point one five. Other, plus zero point three five. They add to zero. Keep that pattern in mind. It comes back in episode thirteen, as backpropagation.
+
+Our test landscape is a bowl. f of z one, z two equals z one squared, plus two z two squared. By the power rule, the partial in z one is two z one. The partial in z two is four z two, because of that two out front.
+
+Seen from above, the contour lines are ellipses around the bottom at zero, zero. A bowl, stretched in one direction.
+
+Stand at the point one, one. The height: one squared plus two times one squared. One plus two. Three. The partial in z one: two times one, two. The partial in z two: four times one, four. So the gradient is two, four.
+
+How steep is it? The length of the gradient: the square root of two squared plus four squared. Four plus sixteen, twenty. The square root of twenty, about four point four seven. That's the slope in the steepest direction.
+
+Before the theory, let's test it by hand. The slope in any unit direction a is the gradient dotted with a. Go straight along z one: a is one, zero. Two times one, plus four times zero. Two. Go straight along z two: a is zero, one. Two times zero, plus four times one. Four.
+
+Now go along the gradient itself: two, four, shrunk to length one by dividing by root twenty, about four point four seven. The dot product: two times two plus four times four, twenty. Divided by four point four seven. Four point four seven. Steeper than both. Let's see why.
+
+Part two. Why steepest? The slope in any unit direction a is the gradient dotted with a. And from episode two, a dot product is the two lengths times the cosine of the angle between them. It's biggest when the angle is zero. So the gradient points straight uphill, and minus the gradient points steepest downhill.
+
+Three fine-print conditions. The function has to be smooth there. The gradient can't be zero: at a flat point it has no direction at all, and saddle points are flat too. And "steepest" assumes ordinary, Euclidean distance.
+
+Part three. The gradient step: move from z to z minus eta times the gradient. Eta is the step size. Episode eight will call it the learning rate. Goodfellow, Bengio and Courville put the catch plainly: this lowers the function for a small enough step.
+
+So take a small one. Eta equals zero point one, from one, one. Eta times the gradient is zero point two, zero point four. Subtract: one minus zero point two is zero point eight. One minus zero point four is zero point six.
+
+The new height: zero point eight squared is zero point six four. Two times zero point six squared is two times zero point three six, zero point seven two. Add them: one point three six. Down from three. That's a good step.
+
+Now get greedy. Eta equals one. One, one minus two, four. That lands at minus one, minus three. Height: minus one squared is one. Two times minus three squared is two times nine, eighteen. Nineteen. We started at three. One step against the gradient, and we went uphill. A lot.
+
+Here's why. Along this line, the height is exactly three, minus twenty eta, plus thirty-six eta squared. The twenty is the gradient dotted with itself, the downhill pull. The thirty-six eta squared is the curvature, and it grows fast. The height falls for any eta between zero and zero point five five six. The best step is about zero point two seven eight, which gets down to about zero point two two two. Goodfellow's warning, in their words: when the curvature term is too large, the gradient descent step can actually move uphill. Small means small compared with the curvature.
+
+So where does that curve come from? Let's derive it by hand. After a step of size eta from one, one, the point is: one minus two eta, and one minus four eta. The height is the first one squared, plus two times the second one squared.
+
+Expand the first: one, minus four eta, plus four eta squared. Expand the second: one, minus eight eta, plus sixteen eta squared, and doubled that's two, minus sixteen eta, plus thirty-two eta squared. Add them up. Three, minus twenty eta, plus thirty-six eta squared.
+
+Check it. Eta zero point one: three, minus two, plus zero point three six. One point three six. Eta one: three, minus twenty, plus thirty-six. Nineteen. Both steps, from one formula.
+
+And now the limits fall out by hand. When does the height come back up to three? When thirty-six eta squared equals twenty eta. Divide by eta: eta equals twenty over thirty-six. Zero point five five six. Any step longer than that lands higher than you started.
+
+The best step sits exactly halfway, at twenty over seventy-two, about zero point two seven eight. The height there: three, minus five point five six, plus two point seven eight. About zero point two two two. If this is the moment the uphill jump made sense, that's the moment to subscribe, or follow wherever you're watching.
+
+Remember our hiker. In the fog, she feels the tilt and steps downhill. Small steps work: every one takes her lower. But take one giant leap in the downhill direction and she sails right over the valley floor and lands higher on the far slope. And her map of the world is only ever the ground under her boots. That's a gradient step. Local knowledge, and a step size that has to respect it.
+
+So here's the myth: the gradient points to the bottom. It sounds right. Near any point, stepping against the gradient does go down.
+
+But check our bowl. At one, one, the downhill arrow, minus the gradient, is minus two, minus four. The direction to the bottom is minus one, minus one. By hand: their dot product is two plus four, six. Their lengths are root twenty and root two, which multiply to root forty, about six point three two five. Six over six point three two five is zero point nine four nine. That's an angle of about eighteen point four degrees. Even in a simple bowl, the steepest way down misses the bottom.
+
+The ellipses are why: steepest-down is always square to the contour line, and these contours are stretched. Add two more limits. The gradient is local: it knows the slope here, not the shape over the next hill. And at a flat point it gives no direction at all. The gradient tells you which way is down from here. It does not tell you where the bottom is.
+
+Let's put it together. The gradient collects every partial derivative into one arrow. It points steepest uphill, because the slope in direction a is the gradient's length times the cosine of the angle. Minus the gradient points steepest downhill. A step against it goes down only if it's small compared with the curvature. On our bowl: anything under zero point five five six, best at zero point two seven eight. And the gradient tells you which way is down from here, not where the bottom is.
+
+One question to take with you. Same bowl, z one squared plus two z two squared, but now at the point two, one. First: what is the gradient? Second: which unit direction lowers f fastest? Third: roughly how much does f fall per unit of distance moved that way? Pause here if you want to work it out.
+
+Here's the answer. The gradient is two times two, four, and four times one, four. Four, four. The fastest way down is the opposite direction, minus one, minus one, divided by root two to make it unit length. And f falls at about the gradient's length per unit of distance: root of sixteen plus sixteen, root thirty-two, about five point six six. If you got all three, you can read the slope of any surface from its gradient.
+
+Here's what to try this week. One: from one, one, try eta of zero point five and zero point six with the formula, and see which side of three each lands on. Two: in the notebook, run gradient descent with your own step size and watch it settle, or blow up. Three: find the slope in the direction one, one, divided by root two, by hand. The one mistake to avoid: assuming a bigger step means faster learning. Past the curvature limit, it means going uphill.
+
+Next time, episode seven: what learning actually means. Mat's surprisal is one term. Training averages thousands of them into a single number, the loss, and we'll see why minimizing it is the whole game.
+
+So tell me in the comments: which surprised you more, one step of size one sending us from three to nineteen, or the steepest way down missing the bottom? The notebook and every source are in the description. Subscribe or follow so you don't miss episode seven, and I'll see you there.

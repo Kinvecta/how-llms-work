@@ -1,0 +1,84 @@
+How Large Language Models Work, Episode 5: Calculus for Learning, Part 1 (Derivatives and the Chain Rule)
+Narrated by Mark (AI voice clone of his own voice).
+
+Picture a hiker on a mountainside, in fog so thick she can't see a single step ahead. No map. No view of the valley. She wants to get lower. All she has is the ground under her boots. She can feel which way it tilts, and how steeply.
+
+Is that enough to find her way down? Surprisingly often, yes. And that one feeling, the tilt under your feet, is exactly how a language model learns.
+
+That tilt has a name: the derivative. Last episode, the model's surprisal at "mat" was one point two zero four nats. Today we find out which way to nudge the model to make that number smaller, and by how much. This is a big topic, so we'll take it in two parts. Today, part one: the derivative, and the chain rule. By the end of this episode you'll find a slope by hand, prove a rule instead of memorizing it, and push the chain rule all the way through a real softmax, one step at a time.
+
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode five: calculus for learning, part one.
+
+Two parts. What a derivative is: how to find one by hand, and how to prove the rule instead of memorizing it. And the calculus chain rule, all the way through the softmax from episode four, with every step written out. Every number is in the companion notebook, linked in the description.
+
+Start with something you already know. Your car's speedometer reads sixty miles an hour. That doesn't mean you'll drive sixty miles. It means: right now, at this instant, your distance is growing at sixty miles for every hour. A rate of change, at one moment.
+
+That's all a derivative is. How fast the output changes, per unit of input, right at one point. For a car: miles per hour. For a model: how much surprisal changes, per unit change in a score.
+
+Part one. The derivative of f at z, written f prime of z, is the slope of f at that point. How fast the output changes when you nudge the input. And that gives you a prediction. Nudge the input by a small amount, delta, and the output changes by about delta times the slope. f of z plus delta is roughly f of z, plus delta times f prime of z.
+
+Let's find a slope by hand, the slow way. Take f of z equals z squared, at z equals three. f of three is nine. Step one whole unit to four: f is sixteen. The change is seven, over a step of one. Slope seven.
+
+Now a smaller step, to three point one. Three point one squared is nine point six one. The change is zero point six one, divided by zero point one. Six point one. Smaller again, to three point zero one: nine point zero six zero one. Change zero point zero six zero one, divided by zero point zero one: six point zero one. Seven, six point one, six point zero one. The slopes are closing in on six.
+
+Why is the slope of z squared exactly two z? Let's prove it by hand. It only takes three lines. Step from z to z plus delta. The new value is z plus delta, squared. Multiply it out: z squared, plus two z delta, plus delta squared.
+
+Subtract the old value, z squared. The change is two z delta, plus delta squared. Divide by the step, delta. Two z, plus delta. Now let the step shrink toward zero. The delta on the end disappears, and what's left is two z. At z equals three, six.
+
+And look back at our table. Seven was two z plus one. Six point one was two z plus zero point one. Six point zero one was two z plus zero point zero one. That extra bit was always the size of the step.
+
+You don't have to do that every time, because there are rules. The power rule: the derivative of z squared is two z. At three, that's six. Exactly where our numbers were heading. And the one we need for surprisal: the derivative of the natural log of z is one over z.
+
+So here's surprisal, minus the natural log of p, as a curve. Its slope is minus one over p. At p equals zero point three zero, that's minus one divided by zero point three zero. Minus three point three three. Raise mat's probability a little and surprisal falls about three point three three times as fast.
+
+Check it. Move p from zero point three zero to zero point three two, a nudge of zero point zero two. The prediction: one point two zero four, minus zero point zero two times three point three three, gives about one point one three seven. The true value, minus the natural log of zero point three two, is one point one three nine. Off by two thousandths. For a small nudge, the slope is a very good guide.
+
+Part two: the calculus chain rule. Most real functions are chains. First g acts on z, then f acts on the result. The rule: the derivative of f of g of z is f prime of g of z, times g prime of z.
+
+Read it as cause and effect. Nudge z, and g moves by g prime times your nudge. That move in g then moves f by f prime times itself. Multiply the two effects. And one warning: this is not the chain rule of probability from episode four, which multiplies conditional probabilities. Same name. Different rule.
+
+A tiny example by hand. Let g of z be three z, and f of u be u squared. At z equals one: g is three. g prime is three. f prime of u is two u, so at three, it's six. Chain rule: six times three. Eighteen.
+
+Now check it the long way. f of g of z is three z, squared: nine z squared. Its derivative is eighteen z. At one, eighteen. Same answer. The chain rule just did it in pieces.
+
+Now the real thing. In episode four, softmax turned scores into probabilities. Let z be the score for mat. Hold everything else fixed, and lump the other three words into one weight, R. R is zero point two zero plus zero point one five plus zero point three five: zero point seven zero.
+
+So the probability of mat is g of z: e to the z, divided by e to the z plus R. Start at z equals the natural log of zero point three zero, and g gives exactly zero point three zero, episode four's number. Then surprisal is f of p: minus the natural log of p. Two links in a chain: score, to probability, to surprisal.
+
+Math Lab. The outer link first. f prime of p is minus one over p. At zero point three zero: minus three point three three.
+
+The inner link. Work through the quotient rule and the slope of the softmax probability comes out beautifully simple: p times one minus p. Zero point three zero times zero point seven zero. Zero point two one. Every bit of the score's nudge that reaches mat's probability gets scaled by zero point two one.
+
+Now, where does that p times one minus p come from? Let's slow down, because this is the step most explanations skip. p is a fraction. On top: e to the z. On the bottom: e to the z, plus R.
+
+For a fraction, there's a rule called the quotient rule. The slope of top over bottom equals: the top's slope times the bottom, minus the top times the bottom's slope, all divided by the bottom squared. We need two slopes. The slope of e to the z is e to the z itself. That's what makes e special. And the bottom is e to the z plus R. R doesn't change, so the bottom's slope is also e to the z.
+
+Now plug in. The top's slope times the bottom: e to the z, times e to the z plus R. Minus the top times the bottom's slope: e to the z, times e to the z.
+
+Look at what happens. Both products contain e to the z times e to the z, and it cancels. What's left on top is R times e to the z. So g prime is R times e to the z, over e to the z plus R, squared.
+
+Now the numbers. At our starting point, e to the z is zero point three zero. The bottom is zero point three zero plus zero point seven zero, which is one. So g prime is zero point seven zero times zero point three zero, over one squared. Zero point two one.
+
+And here's the neat part. e to the z, over the bottom, is just p. R over the bottom is one minus p. So that whole expression is p times one minus p. Zero point three zero times zero point seven zero. Zero point two one again. Same answer, two different ways.
+
+That's the slope of a softmax probability with respect to its own score, and you'll see p times one minus p again and again in this series. If that just clicked for you, that's the moment to subscribe, or follow wherever you're watching.
+
+Now multiply the links. Minus one over zero point three zero, times zero point two one. Zero point two one divided by zero point three zero is zero point seven zero. Minus zero point seven zero. That's the derivative of mat's surprisal with respect to mat's score.
+
+And notice the shortcut hiding in it: one over p, times p times one minus p, is just one minus p. So the slope is minus one minus p, minus zero point seven zero. Raise mat's score, and its surprisal drops at seven tenths of the rate.
+
+Let's test the prediction. Raise the score by zero point one. Prediction: surprisal falls by zero point one times zero point seven zero, zero point zero seven zero. Actually doing it, mat's probability goes from zero point three zero zero to zero point three two one, and surprisal from one point two zero four to one point one three five. A drop of zero point zero six nine. One thousandth off.
+
+Now a big step, a whole one point zero. The straight-line prediction says a drop of zero point seven zero. The real drop is zero point five eight four. The slope is a local fact. Step far, and the curve bends away from it.
+
+Let's put it together. A derivative is a rate of change at one point, a slope, and it predicts small changes: f of z plus delta is about f of z plus delta times the slope. We proved the power rule instead of memorizing it. The calculus chain rule multiplies the effects along a chain. And through the softmax, the outer link gave minus three point three three, the inner link gave p times one minus p, zero point two one, and together: minus zero point seven zero.
+
+One question to take with you. Suppose mat's probability were zero point five zero instead of zero point three zero. First: what is the slope of surprisal with respect to p? Second: what is the inner link, p times one minus p? Third: what is the slope of surprisal with respect to mat's score? Pause here if you want to work it out.
+
+Here's the answer. The outer link is minus one over zero point five zero: minus two. The inner link is zero point five zero times zero point five zero: zero point two five. Multiply: minus two times zero point two five. Minus zero point five zero. And the shortcut agrees: minus one minus p, minus zero point five zero. If you got all three, you can push a nudge through a softmax by hand.
+
+Here's what to try this week. One: find the slope of z cubed at two the slow way, with steps of one, zero point one and zero point zero one. Then prove the rule the way we did for z squared. Two: in the notebook, nudge mat's score by zero point one and confirm the drop of about zero point zero seven. Three: redo the quotient rule with p equal to zero point five zero, all on paper. The one mistake to avoid: treating a slope as a promise for big steps. It's a local guide, and the curve bends away from it.
+
+Next time, part two: the gradient. A real model has millions of numbers, not one. We'll put all their slopes into one arrow, take a step downhill, and watch a step that's too big send us uphill, from three all the way to nineteen.
+
+So tell me in the comments: which step was new to you, proving the power rule, or the quotient rule through softmax? The notebook and every source are in the description. Subscribe or follow so you don't miss part two, and I'll see you there.

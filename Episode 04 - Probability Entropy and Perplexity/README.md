@@ -137,6 +137,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 5, Calculus for Learning: mat's surprisal was 1.204 nats; next we nudge the score for mat and watch that surprisal fall. Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** [Episode 5, Calculus for Learning, Part 1: Derivatives and the Chain Rule](../Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/): mat's surprisal was 1.204 nats; we nudge the score for mat and watch that surprisal fall ([watch](https://youtu.be/ovpwjW2X9RE)).
 
 [← Back to the course](../README.md)

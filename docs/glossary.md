@@ -1,6 +1,6 @@
 # Glossary and notation
 
-Every term and symbol the released episodes use, in plain language. The series fixes each symbol once and keeps it, so a letter introduced in Episode 1 means the same thing in Episode 30. New entries are added as episodes are released.
+Every term and symbol the released episodes use, in plain language. The series fixes each symbol once and keeps it, so a letter introduced in Episode 1 means the same thing in Episode 31. New entries are added as episodes are released.
 
 [Back to the README](../README.md) · [syllabus](../course/)
 
