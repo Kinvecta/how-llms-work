@@ -28,7 +28,7 @@
 </p>
 
 > [!NOTE]
-> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episodes 2 to 6 are out too, each with its page, slides, transcript, brief and notebook (Episode 6 premieres Sat 31 Oct). The notebooks for Episodes 7–16 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
+> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episodes 2 to 6 are out too, each with its page, slides, transcript, brief and notebook. The notebooks for Episodes 7–16 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
 
 <details>
 <summary><b>Table of Contents</b></summary>
