@@ -1,0 +1,72 @@
+How Large Language Models Work: From Math to Transformers
+Episode 8: What Learning Means, Part 2: Maximum Likelihood
+Narrated by Mark (AI voice clone of his own voice). Transcript.
+
+[0:00 Intro, then: two roads, one number]
+Take two probabilities from last episode: zero point three zero, and zero point six zero. Multiply them. Zero point one eight. Take minus the log: one point seven one five. Divide by two. Zero point eight five seven. That's exactly the loss we computed last time, by averaging surprisals. But this time we started by multiplying probabilities. Same number, two completely different roads. That's not a coincidence. It's the reason the loss exists.
+
+[0:38 Two losses, one idea]
+Last episode, we met two losses. Squared error for numbers. Cross-entropy for words. And honestly, they looked like two separate choices. Why square the gaps? Why take a log? Today we see they're one idea, wearing two outfits. The idea is called maximum likelihood.
+
+[0:57 Three parts]
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode eight: what learning means, part two, maximum likelihood. Three parts. The likelihood, and why multiplying turns into averaging. The bell curve, and where the square in squared error comes from. And the fine print: the assumptions behind it all, plus a myth about low loss. Every number is in the companion notebook, linked in the description.
+
+[1:23 The likelihood: how probable was what happened?]
+Part one: the likelihood. Here's the question it asks. Of everything that could have happened, the data are what actually happened. How much probability did the model give to that? The data stay fixed. We turn the knobs, theta, and watch that probability change. A good model gives the real data a lot of probability.
+
+[1:43 The chain rule does the work: 0.18]
+For text, episode four's chain rule does the work. The probability of a whole sequence is exactly the product of each word's probability given the words before it. No shortcuts, no independence between the words needed. So the likelihood is a product of the very probabilities we've been using. For our two words: zero point three zero times zero point six zero. Zero point one eight.
+
+[2:05 A second model: higher likelihood, lower loss]
+Now compare a second model. It gives the same two words zero point four zero and zero point five zero. Multiply: zero point two zero. That's bigger than zero point one eight, so model two explains the data better. Now its loss, from last episode's check question: zero point eight zero five, below model one's zero point eight five seven. Higher likelihood, lower loss. Every time. Let's see why.
+
+[2:30 Products shrink, logs add]
+First problem: products of probabilities shrink fast. Half times half, a thousand times over, is about ten to the minus three hundred and one. Keep going to one thousand seventy-five halves, and an ordinary computer just rounds it to zero. The log fixes that. It turns a product into a sum. Log of zero point three times zero point six is log zero point three plus log zero point six. Minus one point two zero four, plus minus zero point five one one. Minus one point seven one five.
+
+[3:02 The log keeps the winner]
+Does the log change who wins? No. The log only goes up. Bigger input, bigger output. Zero point two zero beats zero point one eight, and its log, minus one point six zero nine, beats minus one point seven one five. Goodfellow, Bengio and Courville say it directly: taking the logarithm doesn't change the arg max. Whichever theta had the biggest likelihood still has the biggest log likelihood.
+
+[3:28 Divide by N, flip the sign: 0.857]
+Two more moves. Divide by N, the number of terms. That's just rescaling, so the winner still doesn't change. Minus one point seven one five over two is minus zero point eight five seven. Now flip the sign, so that big becomes small. Plus zero point eight five seven. That's the loss. Mean surprisal. So maximizing the likelihood is exactly the same as minimizing the loss. The two roads from the cold open are one road.
+
+[3:56 Negative log-likelihood is cross-entropy]
+That's the punchline. Goodfellow and colleagues name the cost "the negative log-likelihood, equivalently described as the cross-entropy." Cross-entropy wasn't an arbitrary pick. It's what you get when you ask: which knobs make the real text most probable? If that click just happened for you, that's the moment to subscribe, or follow wherever you're watching.
+
+[4:17 Numbers: the Gaussian noise assumption]
+Part two: numbers. Where does the square come from? Here's the assumption. The label y is the prediction y hat, plus some noise. And the noise follows a bell curve, a Gaussian, with a fixed spread. We'll call that spread tau. Goodfellow writes sigma, but in this series sigma is saved for the sigmoid.
+
+[4:38 Where the square hides in the bell curve]
+The bell curve's density at y is: one over the square root of two pi tau squared, times e to the minus y minus y hat squared, over two tau squared. Take minus the log, and the exponential disappears. You get two pieces. A constant, one half log of two pi tau squared. Plus the squared error, over two tau squared. There it is. The square was hiding inside the bell curve.
+
+[5:06 τ = 1 by hand: 0.919 and 1.419]
+Let's do it by hand with tau equals one. The constant: one half log of two pi. Two pi is about six point two eight three, its log is about one point eight three eight, and half of that is zero point nine one nine. Line A's miss of one: zero point nine one nine, plus one squared over two, a half. One point four one nine. A perfect hit pays just the constant, zero point nine one nine.
+
+[5:33 All three points: 3.257 vs 2.840]
+Now all three points. Line A: three constants, two point seven five seven, plus half its squared errors, half of one. Total, three point two five seven. Line B: the same two point seven five seven, plus half of one sixth, zero point zero eight three. Total, two point eight four zero. The constant is identical for both lines. The only part that differs is half the sum of squared errors. So with a fixed tau, the line with the highest likelihood is exactly the least-squares line.
+
+[6:06 One principle, two losses]
+Put the two side by side. Predicting a real number? Assume Gaussian noise, and maximum likelihood gives you mean squared error. Predicting a word from a vocabulary? The model's softmax output is a categorical distribution, and maximum likelihood gives you cross-entropy. Goodfellow notes a linear output "is often used to produce the mean of a conditional Gaussian distribution." Bishop calls the negative log likelihood "an error function." One principle. Only the assumed distribution changes.
+
+[6:38 The fine print: four assumptions]
+Part three: the fine print. This equivalence rests on four assumptions. One: the training sequences are drawn independently. The words inside a sequence don't need to be, thanks to the chain rule. Two: a fixed family of models. If the truth lies outside it, the best you get is the closest member, measured in cross-entropy, not the truth. Three: it's fit on the training sample. And four, for squared error: tau stays fixed. Learn tau too, and the loss is no longer plain squared error.
+
+[7:14 Myth: a low training loss means a good model]
+Now the myth. "A low training loss means a good model." It's tempting, since low loss means high likelihood. But look at what the loss is averaged over: the training data. A model can memorize those and still stumble on text it has never seen. Whether it generalizes is a separate question, and it gets its own episode: episode ten.
+
+[7:37 Why ÷ N matters for the gradient]
+One more detail that matters soon. Dividing by N doesn't change which theta wins, but it changes the size of the loss, and so the size of its gradient. Our two-word sum, one point seven one five, has a gradient twice as big as the mean, zero point eight five seven. With millions of words, the sum would be millions of times bigger. That's why the step size, eta, is set against the mean. Next episode calls it the learning rate.
+
+[8:05 Recap]
+Let's put it together. The likelihood is the probability the model gives to the data that actually happened. Take its log, divide by N, flip the sign, and you get the mean loss. So maximizing likelihood is minimizing loss. For words, that loss is cross-entropy. For numbers with fixed Gaussian noise, it's mean squared error. And it rests on independent samples, a fixed model family, the training data, and a fixed tau.
+
+[8:33 Your turn]
+Your turn. A batch has three words, and the model gives the observed words probabilities zero point five, zero point two five, and zero point eight. One: what's the likelihood? Two: what's the mean loss, L? Three: with tau equals one, what does a prediction that misses by two pay in negative log likelihood? Pause here and work it out.
+
+[8:58 The answer]
+Here's the answer. The likelihood: zero point five times zero point two five is zero point one two five, times zero point eight, zero point one. The loss: minus log zero point one is two point three zero three, over three terms, zero point seven six eight nats. And the miss by two: the constant zero point nine one nine, plus two squared over two, which is two. Two point nine one nine. If you got all three, you can turn any model's probabilities into a likelihood and a loss.
+
+[9:33 Try this week]
+Here's what to try this week. One: multiply three probabilities, then add their logs, and check you get the same answer both ways. Two: in the notebook, run the grid search and watch the lowest loss and the highest likelihood land on the same line. Three: work out the Gaussian negative log likelihood for line C from last episode, W one point five and beta one half. The one mistake to avoid: treating low training loss as proof the model is good. It only says the model fits what it has already seen.
+
+[10:07 Next: gradient descent]
+Next time, episode nine: gradient descent, walking downhill for real. We have a loss. We have a gradient. Now we let the model take thousands of steps, and meet the learning rate, the one knob that decides whether it settles or blows up. So tell me in the comments: did you see it coming that multiplying probabilities and averaging surprisals are the same road? The notebook and every source are in the description. Subscribe or follow so you don't miss episode nine, and I'll see you there.

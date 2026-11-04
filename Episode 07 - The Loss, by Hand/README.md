@@ -150,6 +150,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 8, What Learning Means, Part 2: Maximum Likelihood. Why these two losses, and not some other? Multiply 0.30 by 0.60, take a log, and something surprising falls out. Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** [Episode 8, What Learning Means, Part 2: Maximum Likelihood, by Hand](../Episode%2008%20-%20Maximum%20Likelihood/): why these two losses, and not some other? Multiply 0.30 by 0.60, take a log, and something surprising falls out ([watch](https://youtu.be/u1bSbpKfF6g)).
 
 [← Back to the course](../README.md)
