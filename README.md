@@ -20,15 +20,15 @@
 <p align="center">
   <a href="https://www.youtube.com/playlist?list=PLAw1yNagEJRM"><img alt="YouTube playlist" src="https://img.shields.io/badge/YouTube-playlist-red?logo=youtube&logoColor=white"></a>
   <a href="https://youtu.be/rXTCgq-qoJA"><img alt="Series trailer" src="https://img.shields.io/badge/watch-trailer-red?logo=youtube&logoColor=white"></a>
-  <a href="#course"><img alt="15 companion notebooks" src="https://img.shields.io/badge/notebooks-15-F9AB00?logo=jupyter&logoColor=white"></a>
-  <a href="course/"><img alt="31 episodes in 6 parts" src="https://img.shields.io/badge/course-31%20episodes%20%C2%B7%206%20parts-FFC400"></a>
+  <a href="#course"><img alt="17 companion notebooks" src="https://img.shields.io/badge/notebooks-17-F9AB00?logo=jupyter&logoColor=white"></a>
+  <a href="course/"><img alt="32 episodes in 6 parts" src="https://img.shields.io/badge/course-32%20episodes%20%C2%B7%206%20parts-FFC400"></a>
   <a href="docs/glossary.md"><img alt="Glossary and notation" src="https://img.shields.io/badge/glossary-%26%20notation-8FB4E8"></a>
   <a href="https://github.com/Kinvecta/ai-training"><img alt="See also: Kinvecta AI Training" src="https://img.shields.io/badge/see%20also-AI%20Training-0A1A2F"></a>
   <a href="https://github.com/Kinvecta/how-llms-work/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Kinvecta/how-llms-work?style=social"></a>
 </p>
 
 > [!NOTE]
-> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episodes 2 to 6 are out too, each with its page, slides, transcript, brief and notebook. The notebooks for Episodes 7–16 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
+> **New episodes land here as they are released.** Episode 1 is out with its video, slides, transcript, research brief and notebook. Episodes 2 to 7 are out too, each with its page, slides, transcript, brief and notebook. The notebooks for Episodes 8–17 are already here and run today; their videos are in production. Watch the repository (Custom → Releases) or [subscribe on YouTube](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) to hear when the next one ships.
 
 <details>
 <summary><b>Table of Contents</b></summary>
@@ -62,7 +62,7 @@
 
 *How Large Language Models Work: From Math to Transformers* is a free video course that opens the black box and builds a large language model up from the math, one idea at a time.
 
-- **31 episodes in six parts**, from "what is an LLM?" through vectors, probability and calculus, to neural networks, attention, a tiny GPT, and how real models are trained, scaled and evaluated
+- **32 episodes in six parts**, from "what is an LLM?" through vectors, probability and calculus, to neural networks, attention, a tiny GPT, and how real models are trained, scaled and evaluated
 - **Plain words first**, with a picture you already know; then a **Math Lab** with the full derivation for anyone who wants it
 - **A companion notebook for every episode** that reproduces every number on screen, with an `assert` on each one, and runs in Colab with no install
 - **A research brief with sources** for every claim, and a [glossary](docs/glossary.md) that fixes each symbol once for the whole series
@@ -86,7 +86,7 @@
 
 Start with Episode 1, or the 4-minute trailer for the whole plan. New episodes are added to the same playlist.
 
-[Episode 1](https://youtu.be/ZJ4BbrnXBRo) · [Episode 2](https://youtu.be/onxRHQlY-TI) · [Episode 3](https://youtu.be/RwVAxe58lqE) · [Episode 4](https://youtu.be/WAzPH6pRwUc) · [Episode 5](https://youtu.be/gYxNFd3bLk8) · [Episode 6](https://youtu.be/5emurxC67Mw) · [trailer](https://youtu.be/rXTCgq-qoJA) · [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM)
+[Episode 1](https://youtu.be/ZJ4BbrnXBRo) · [Episode 2](https://youtu.be/onxRHQlY-TI) · [Episode 3](https://youtu.be/RwVAxe58lqE) · [Episode 4](https://youtu.be/WAzPH6pRwUc) · [Episode 5](https://youtu.be/gYxNFd3bLk8) · [Episode 6](https://youtu.be/5emurxC67Mw) · [Episode 7](https://youtu.be/ia7aFhn_20k) · [trailer](https://youtu.be/rXTCgq-qoJA) · [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM)
 
 </td>
 <td width="33%" valign="top">
@@ -112,7 +112,7 @@ Each episode has slides as a PDF, the transcript, a research brief with every so
 
 ## course
 
-Episodes 1 to 6 are out, with their pages here. The notebooks for Episodes 7–16 are ready ahead of their videos, and each episode's folder (slides, transcript, research brief, page) is added here when its video is released. The full plan is in the [syllabus](course/).
+Episodes 1 to 7 are out, with their pages here. The notebooks for Episodes 8–17 are ready ahead of their videos, and each episode's folder (slides, transcript, research brief, page) is added here when its video is released. The full plan is in the [syllabus](course/).
 
 | **#** | **episode** | **watch** | **notebook** | **materials** |
 |:--:|---|---|---|---|
@@ -122,17 +122,18 @@ Episodes 1 to 6 are out, with their pages here. The notebooks for Episodes 7–1
 | **4** | **[Probability, Entropy and Perplexity](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/)**<br><sub>Part I · 18:33 · Softmax, entropy and perplexity, worked by hand; the chain rule with GPT-2's real probabilities</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/WAzPH6pRwUc) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/transcript/Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity%20-%20transcript.txt) |
 | **5** | **[Calculus for Learning, Part 1: Derivatives and the Chain Rule](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/)**<br><sub>Part I · 13:09 · A slope by hand, a three-line proof of the power rule, the chain rule and the quotient rule through softmax</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/gYxNFd3bLk8) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/transcript/Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule%20-%20transcript.txt) |
 | **6** | **[Calculus for Learning, Part 2: The Gradient and the Step](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/)**<br><sub>Part I · 11:31 · Partial derivatives, the gradient, why it points uphill, and why a big step can go uphill</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/5emurxC67Mw) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2006%20-%20The%20Gradient%20and%20the%20Step/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/transcript/Episode%2006%20-%20The%20Gradient%20and%20the%20Step%20-%20transcript.txt) |
-| **7** | **What Learning Means: Data, Models, Loss**<br><sub>Part II · Training data, a model with parameters, and a loss that scores it</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2007%20-%20Learning%20Loss.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2007%20-%20Learning%20Loss.ipynb) | |
-| **8** | **Gradient Descent: Walking Downhill**<br><sub>Part II · Following the gradient; learning rate; steps toward lower loss</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2008%20-%20Gradient%20Descent.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2008%20-%20Gradient%20Descent.ipynb) | |
-| **9** | **Generalization: Overfitting, Validation, Regularization**<br><sub>Part II · Practice score vs exam score; held-out data; keeping models honest</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2009%20-%20Generalization.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2009%20-%20Generalization.ipynb) | |
-| **10** | **Turning Text into Training Examples**<br><sub>Part II · How one page of text becomes many next-token questions</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2010%20-%20Training%20Examples.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2010%20-%20Training%20Examples.ipynb) | |
-| **11** | **Tokens and Embeddings**<br><sub>Part II · Byte-pair encoding and the embedding table</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2011%20-%20Tokens%20and%20Embeddings.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2011%20-%20Tokens%20and%20Embeddings.ipynb) | |
-| **12** | **The Artificial Neuron and Activation Functions**<br><sub>Part III · Weighted sums, biases and the bend (ReLU, GELU) that makes depth useful</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2012%20-%20Neuron%20and%20Activations.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2012%20-%20Neuron%20and%20Activations.ipynb) | |
-| **13** | **Deep Networks and Backpropagation**<br><sub>Part III · Layers, and how blame flows backward through them</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2013%20-%20Backpropagation.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2013%20-%20Backpropagation.ipynb) | |
-| **14** | **Training a Network End to End**<br><sub>Part III · Putting the pieces together: data, forward pass, loss, gradients, optimizer</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2014%20-%20Training%20End%20to%20End.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2014%20-%20Training%20End%20to%20End.ipynb) | |
-| **15** | **What Networks Learn: Representations**<br><sub>Part III · Probing what the hidden layers encode</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2015%20-%20Representations.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2015%20-%20Representations.ipynb) | |
-| **16** | **Before Transformers: Counting Words**<br><sub>Part IV · N-gram models, smoothing and what counting can and cannot do</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2016%20-%20Counting%20Words.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2016%20-%20Counting%20Words.ipynb) | |
-| **17–31** | **Parts IV–VI: the transformer, building and scaling, beyond the basics**<br><sub>Attention, the transformer block, a tiny GPT, pretraining, scaling laws, post-training, failure modes, evaluation</sub> | ![planned](https://img.shields.io/badge/video-planned-555) | with each episode | [syllabus](course/) |
+| **7** | **[What Learning Means, Part 1: The Loss, by Hand](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/)**<br><sub>Part II · 11:21 · Mean squared error for three dots by hand, cross-entropy that collapses to one surprisal, the loss as a mean, and perplexity</sub> | [![YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/ia7aFhn_20k) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2007%20-%20The%20Loss%2C%20by%20Hand/notebook.ipynb) | [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/slides.pdf) [![Brief](https://img.shields.io/badge/read-brief-blue)](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/transcript/Episode%2007%20-%20The%20Loss%2C%20by%20Hand%20-%20transcript.txt) |
+| **8** | **What Learning Means, Part 2: Maximum Likelihood**<br><sub>Part II · Why these two losses: the likelihood, its log and mean, the Gaussian case, and when a low training loss is not enough</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2008%20-%20Learning%20Loss.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2008%20-%20Learning%20Loss.ipynb) | |
+| **9** | **Gradient Descent: Walking Downhill**<br><sub>Part II · Following the gradient; learning rate; steps toward lower loss</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2009%20-%20Gradient%20Descent.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2009%20-%20Gradient%20Descent.ipynb) | |
+| **10** | **Generalization: Overfitting, Validation, Regularization**<br><sub>Part II · Practice score vs exam score; held-out data; keeping models honest</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2010%20-%20Generalization.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2010%20-%20Generalization.ipynb) | |
+| **11** | **Turning Text into Training Examples**<br><sub>Part II · How one page of text becomes many next-token questions</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2011%20-%20Training%20Examples.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2011%20-%20Training%20Examples.ipynb) | |
+| **12** | **Tokens and Embeddings**<br><sub>Part II · Byte-pair encoding and the embedding table</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2012%20-%20Tokens%20and%20Embeddings.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2012%20-%20Tokens%20and%20Embeddings.ipynb) | |
+| **13** | **The Artificial Neuron and Activation Functions**<br><sub>Part III · Weighted sums, biases and the bend (ReLU, GELU) that makes depth useful</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2013%20-%20Neuron%20and%20Activations.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2013%20-%20Neuron%20and%20Activations.ipynb) | |
+| **14** | **Deep Networks and Backpropagation**<br><sub>Part III · Layers, and how blame flows backward through them</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2014%20-%20Backpropagation.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2014%20-%20Backpropagation.ipynb) | |
+| **15** | **Training a Network End to End**<br><sub>Part III · Putting the pieces together: data, forward pass, loss, gradients, optimizer</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2015%20-%20Training%20End%20to%20End.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2015%20-%20Training%20End%20to%20End.ipynb) | |
+| **16** | **What Networks Learn: Representations**<br><sub>Part III · Probing what the hidden layers encode</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2016%20-%20Representations.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2016%20-%20Representations.ipynb) | |
+| **17** | **Before Transformers: Counting Words**<br><sub>Part IV · N-gram models, smoothing and what counting can and cannot do</sub> | ![coming soon](https://img.shields.io/badge/video-coming%20soon-555) | [![Colab](https://img.shields.io/badge/open-Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/notebooks/Episode%2017%20-%20Counting%20Words.ipynb) [![Notebook](https://img.shields.io/badge/view-notebook-0A1A2F)](notebooks/Episode%2017%20-%20Counting%20Words.ipynb) | |
+| **18–32** | **Parts IV–VI: the transformer, building and scaling, beyond the basics**<br><sub>Attention, the transformer block, a tiny GPT, pretraining, scaling laws, post-training, failure modes, evaluation</sub> | ![planned](https://img.shields.io/badge/video-planned-555) | with each episode | [syllabus](course/) |
 
 ## how it works
 
@@ -196,17 +197,17 @@ flowchart LR
 | Part | Episodes | You will be able to | Status |
 |:--:|:--:|---|---|
 | **I** · Foundations | 1–6 | Say what an LLM computes, and use vectors, matrices, probability, derivatives and the gradient to describe it | Eps 1–6 out |
-| **II** · How machines learn | 7–11 | Define a loss, walk it downhill, check that the model generalizes, and turn text into tokens and training examples | notebooks ready |
-| **III** · Neural networks | 12–15 | Build a neuron, backpropagate through a deep network, train one end to end, and probe what it learned | notebooks ready |
-| **IV** · The transformer | 16–23 | Explain why counting words isn't enough, how attention works, and build a tiny GPT | notebook 16 ready |
-| **V** · Building and scaling | 24–27 | Describe pretraining, scaling laws, training at scale and post-training | planned |
-| **VI** · Beyond the basics | 28–31 | Weigh new architectures, LLM systems, failure modes, evaluation and governance | planned |
+| **II** · How machines learn | 7–12 | Define a loss, walk it downhill, check that the model generalizes, and turn text into tokens and training examples | Ep 7 out · notebooks ready |
+| **III** · Neural networks | 13–16 | Build a neuron, backpropagate through a deep network, train one end to end, and probe what it learned | notebooks ready |
+| **IV** · The transformer | 17–24 | Explain why counting words isn't enough, how attention works, and build a tiny GPT | notebook 17 ready |
+| **V** · Building and scaling | 25–28 | Describe pretraining, scaling laws, training at scale and post-training | planned |
+| **VI** · Beyond the basics | 29–32 | Weigh new architectures, LLM systems, failure modes, evaluation and governance | planned |
 
 ## one sentence, thirty episodes
 
 > **"The cat sat on the mat because it was tired."**
 
-The same sentence runs through every episode. In Episode 1 it's eleven GPT-2 tokens and a probability for each one. Later it becomes vectors (Episode 2), training examples (Episode 9), embeddings (Episode 10), attention ("it" looking back at "cat"), and finally text a tiny GPT generates on its own. Here is what GPT-2 small does with it today:
+The same sentence runs through every episode. In Episode 1 it's eleven GPT-2 tokens and a probability for each one. Later it becomes vectors (Episode 2), training examples (Episode 11), embeddings (Episode 12), attention ("it" looking back at "cat"), and finally text a tiny GPT generates on its own. Here is what GPT-2 small does with it today:
 
 | prefix | next token | GPT-2 small | rank |
 |---|---|--:|:--:|
@@ -279,6 +280,15 @@ Watch in order in the [YouTube playlist](https://www.youtube.com/playlist?list=P
 </td>
 </tr>
 <tr>
+<td width="40%"><a href="https://youtu.be/ia7aFhn_20k"><img src="Episode%2007%20-%20The%20Loss%2C%20by%20Hand/thumbnail.png" width="100%" alt="Watch Episode 7: The Loss, by Hand"></a></td>
+<td valign="top">
+<b><a href="https://youtu.be/ia7aFhn_20k">Episode 7 · What Learning Means, Part 1: The Loss, by Hand</a></b><br>
+<sub><b>Length:</b> 11:21 · <b>Part II:</b> How Machines Learn · <a href="Episode%2007%20-%20The%20Loss%2C%20by%20Hand/">Materials&nbsp;→</a> · <a href="https://youtu.be/qzDae9gvggc">48&nbsp;s Short</a></sub>
+<p>Three dots, two lines: one hits two dots and misses the third by one, the other misses all three by a little. Which is better? We work the mean squared error of both by hand (1/3 and 1/18, six times smaller), then the loss for words: cross-entropy against a one-hot target collapses to one term, −ln 0.30 = 1.204 nats from ln 3 − ln 10, and two words average to 0.857 nats, perplexity ≈ 2.36. Then the myth: a model that is right can still pay.</p>
+<p><b>The idea to keep:</b> <i>Learning means turning the knobs θ to make one number small: the loss, a mean of penalties over N terms. It is not a count of wrong answers.</i></p>
+</td>
+</tr>
+<tr>
 <td width="40%"><a href="https://youtu.be/rXTCgq-qoJA"><img src="docs/assets/trailer-thumbnail.png" width="100%" alt="Watch the series trailer"></a></td>
 <td width="60%" valign="top">
 <b><a href="https://youtu.be/rXTCgq-qoJA">Series trailer · From Math to Transformers</a></b><br>
@@ -290,7 +300,7 @@ Watch in order in the [YouTube playlist](https://www.youtube.com/playlist?list=P
 
 ## run the notebooks
 
-Every notebook runs in **Google Colab** with no install: open it from the [course table](#course) and choose *Runtime → Run all*. The notebooks for Episodes 2–10 use only `numpy`; the ones that measure a real model download GPT-2 small (about 500 MB) once. A CPU is enough for all of them.
+Every notebook runs in **Google Colab** with no install: open it from the [course table](#course) and choose *Runtime → Run all*. The notebooks for Episodes 2–11 use only `numpy`; the ones that measure a real model download GPT-2 small (about 500 MB) once. A CPU is enough for all of them.
 
 **Locally** (Python 3.12+, the same as Colab):
 
@@ -317,7 +327,8 @@ python tools/check_notebooks.py "Episode 01 - What an LLM Really Is/notebook.ipy
 | Softmax and entropy by hand, with self-checks | the try-it cell of the [Episode 4 notebook](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/notebook.ipynb) |
 | Push a nudge through softmax, by hand | the try-it cell of the [Episode 5 notebook](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/notebook.ipynb) |
 | Run your own gradient descent and pick a step size | the try-it cell of the [Episode 6 notebook](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/notebook.ipynb) |
-| Get ahead: losses, MSE and cross-entropy | [Episode 7 notebook](notebooks/Episode%2007%20-%20Learning%20Loss.ipynb) |
+| Beat line B, and score your own words, by hand | the try-it cell of the [Episode 7 notebook](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/notebook.ipynb) |
+| Get ahead: maximum likelihood and why these two losses | [Episode 8 notebook](notebooks/Episode%2008%20-%20Learning%20Loss.ipynb) |
 
 ## teach it
 
@@ -353,7 +364,7 @@ Because it is open, small and well documented, so every number in the video can 
 <details>
 <summary><b>When do the next episodes come out?</b></summary>
 
-As they are finished. The notebooks for Episodes 7–16 are already here. Subscribe to the [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) or watch this repository's releases to hear about each one.
+As they are finished. The notebooks for Episodes 8–17 are already here. Subscribe to the [playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) or watch this repository's releases to hear about each one.
 </details>
 
 <details>
@@ -389,8 +400,9 @@ Used the series in a class, a study group, or to build something? Share it in [D
 | [`Episode 04 - Probability Entropy and Perplexity`](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2004%20-%20Probability%20Entropy%20and%20Perplexity/notebook.ipynb) |
 | [`Episode 05 - Derivatives and the Chain Rule`](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2005%20-%20Derivatives%20and%20the%20Chain%20Rule/notebook.ipynb) |
 | [`Episode 06 - The Gradient and the Step`](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2006%20-%20The%20Gradient%20and%20the%20Step/notebook.ipynb) |
-| [`notebooks/`](notebooks/) | Companion notebooks for Episodes 7–16, ready ahead of their videos |
-| [`course/`](course/) | Syllabus: all 31 episodes, six parts, outcomes |
+| [`Episode 07 - The Loss, by Hand`](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/) | The episode page, slides (PDF), transcript, research brief with sources, thumbnail and the companion [notebook](Episode%2007%20-%20The%20Loss%2C%20by%20Hand/notebook.ipynb) |
+| [`notebooks/`](notebooks/) | Companion notebooks for Episodes 8–17, ready ahead of their videos |
+| [`course/`](course/) | Syllabus: all 32 episodes, six parts, outcomes |
 | [`docs/`](docs/) | [Glossary and notation](docs/glossary.md) and the README's images |
 | [`tools/`](tools/) | `check_notebooks.py`, which runs every notebook and its asserts |
 | [`requirements.txt`](requirements.txt) | Pinned versions of everything the notebooks import |

@@ -137,6 +137,6 @@ About 15 minutes.
 
 ---
 
-**Next:** Episode 7, What Learning Means, Part 1: The Loss: mat's surprisal is one term; training averages thousands of them into a single number, the loss. Its notebook is already in [`notebooks/`](../notebooks/).
+**Next:** [Episode 7, What Learning Means, Part 1: The Loss, by Hand](../Episode%2007%20-%20The%20Loss%2C%20by%20Hand/): mat's surprisal is one term; training averages thousands of them into a single number, the loss ([watch](https://youtu.be/ia7aFhn_20k)).
 
 [← Back to the course](../README.md)
