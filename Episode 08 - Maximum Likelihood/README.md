@@ -1,8 +1,8 @@
-# Episode 8 · Maximum Likelihood
+# Episode 8 · Maximum Likelihood, by Hand
 
 [![Watch on YouTube](https://img.shields.io/badge/watch-YouTube-red?logo=youtube&logoColor=white)](https://youtu.be/u1bSbpKfF6g) [![Open in Colab](https://img.shields.io/badge/open-Colab%20notebook-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/Kinvecta/how-llms-work/blob/main/Episode%2008%20-%20Maximum%20Likelihood/notebook.ipynb) [![Slides](https://img.shields.io/badge/view-slides%20%28PDF%29-8A2BE2)](slides.pdf) [![Research brief](https://img.shields.io/badge/read-brief-blue)](research-brief.md) [![Transcript](https://img.shields.io/badge/read-transcript-lightgrey)](transcript/Episode%2008%20-%20Maximum%20Likelihood%20-%20transcript.txt) [![Short](https://img.shields.io/badge/watch-the%20Short-red?logo=youtube&logoColor=white)](https://youtu.be/nXAHA0oHIo4)
 
-<a href="https://youtu.be/u1bSbpKfF6g"><img src="thumbnail.png" width="560" alt="Watch Episode 8: Maximum Likelihood"></a>
+<a href="https://youtu.be/u1bSbpKfF6g"><img src="thumbnail.png" width="560" alt="Watch Episode 8: Maximum Likelihood, by Hand"></a>
 
 **Length:** 10:36 · **Part II:** How Machines Learn · **Math:** Lik(θ) = Π p_θ(xₜ | x<ₜ), −(1/N) ln Lik(θ) = L(θ), −ln p(y) = ½ ln(2πτ²) + (y − ŷ)²/(2τ²) · **Code:** NumPy and matplotlib, runs anywhere
 

@@ -37,7 +37,7 @@ Episode 1 gave the next-word probabilities after "The cat sat on the": mat 0.30,
 | PP | Perplexity |
 | exp(x) | eˣ |
 
-Reused: V, x<ₜ, Σ, i and j, n (sequence length). Avoided: N (Episode 6 mean loss), y and ŷ (labels), and σ (the outline uses it for the sigmoid later).
+Reused: V, x<ₜ, Σ, i and j, n (sequence length). Avoided: N (Episode 7 mean loss), y and ŷ (labels), and σ (the outline uses it for the sigmoid later).
 
 ## Section 1: Cold open (about 1 minute)
 
@@ -53,7 +53,7 @@ The chain rule of probability multiplies these factors [S31 Eq. 3.6; S33 Eq. 3.4
 
 > P(x₁, …, xₙ) = Π (t = 1 to n) p(xₜ | x<ₜ)
 
-The first factor has an empty prefix (Episode 9: with no start token, the model scores only the later factors). Each later factor conditions on everything before it. In the running example, the factor for "mat" after "The cat sat on the" is 0.30 (illustrative).
+The first factor has an empty prefix (Episode 11: with no start token, the model scores only the later factors). Each later factor conditions on everything before it. In the running example, the factor for "mat" after "The cat sat on the" is 0.30 (illustrative).
 
 **Speaker note.** The calculus chain rule (Episode 5) is a different rule with the same name.
 
@@ -97,7 +97,7 @@ For a test text of n tokens, the observed tokens give a per-token cross-entropy,
 
 > PP = exp(CE)
 
-Jurafsky & Martin write the same quantity in bits, PP = 2^H(W), with H(W) = −(1/N) log₂ P(W), where N is our n [S33 §3.7, Eq. 3.42]. The two forms agree because 2^(x / ln 2) = eˣ. We avoid N here because Episode 6 uses it for the mean loss.
+Jurafsky & Martin write the same quantity in bits, PP = 2^H(W), with H(W) = −(1/N) log₂ P(W), where N is our n [S33 §3.7, Eq. 3.42]. The two forms agree because 2^(x / ln 2) = eˣ. We avoid N here because Episode 7 uses it for the mean loss.
 
 Two more points from the same chapter: perplexity can be thought of as the "weighted average branching factor of a language" [S33 §3.3.1], and two models can be compared only if they use identical vocabularies [S33 Ch 3].
 

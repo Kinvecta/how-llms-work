@@ -1,3 +1,7 @@
+How Large Language Models Work: From Math to Transformers
+Episode 7: What Learning Means, Part 1: The Loss, by Hand
+Narrated by Mark (AI voice clone of his own voice). Transcript.
+
 Three dots on a grid. Two straight lines through them. One line misses a single dot by one. The other misses all three, but only a little. Which line is better? You probably have a gut feeling. A computer doesn't. It needs a number. And not just "better" — how much better. By the end of this episode, you'll have that number, worked out by hand: one third for the first line, one eighteenth for the second. Six times smaller.
 
 Last episode, we learned to step downhill. The gradient tells you which way is down, and a small step against it lowers the height. But the height of what? Training needs one number to push down, a single number that says how badly the model is doing on its data. That number is the loss. And back in episode five, we already met one piece of it: mat's surprisal, one point two zero four nats. Today we find out what that number is for.

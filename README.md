@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://www.youtube.com/playlist?list=PLAw1yNagEJRM"><img src="docs/assets/banner.svg" alt="How Large Language Models Work: from math to transformers. A free 30-episode course by Kinvecta." width="100%"></a>
+  <a href="https://www.youtube.com/playlist?list=PLAw1yNagEJRM"><img src="docs/assets/banner.svg" alt="How Large Language Models Work: from math to transformers. A free 32-episode course by Kinvecta." width="100%"></a>
 </p>
 
 <p align="center">
-  <a href="#video-tutorials">videos</a> | <a href="#course">course</a> | <a href="#how-it-works">how it works</a> | <a href="#run-the-notebooks">notebooks</a> | <a href="#one-sentence-thirty-episodes">the running sentence</a> | <a href="#faq">FAQ</a>
+  <a href="#video-tutorials">videos</a> | <a href="#course">course</a> | <a href="#how-it-works">how it works</a> | <a href="#run-the-notebooks">notebooks</a> | <a href="#one-sentence-thirty-two-episodes">the running sentence</a> | <a href="#faq">FAQ</a>
 </p>
 
 <br>
@@ -38,7 +38,7 @@
 - [course](#course)
 - [how it works](#how-it-works)
   - [the series at a glance](#the-series-at-a-glance)
-- [one sentence, thirty episodes](#one-sentence-thirty-episodes)
+- [one sentence, thirty-two episodes](#one-sentence-thirty-two-episodes)
 - [video tutorials](#video-tutorials)
 - [run the notebooks](#run-the-notebooks)
 - [teach it](#teach-it)
@@ -66,7 +66,7 @@
 - **Plain words first**, with a picture you already know; then a **Math Lab** with the full derivation for anyone who wants it
 - **A companion notebook for every episode** that reproduces every number on screen, with an `assert` on each one, and runs in Colab with no install
 - **A research brief with sources** for every claim, and a [glossary](docs/glossary.md) that fixes each symbol once for the whole series
-- **One running sentence**, "The cat sat on the mat because it was tired.", carried through all thirty episodes
+- **One running sentence**, "The cat sat on the mat because it was tired.", carried through all thirty-two episodes
 
 </td>
 <td width="56%" valign="top">
@@ -203,7 +203,7 @@ flowchart LR
 | **V** · Building and scaling | 25–28 | Describe pretraining, scaling laws, training at scale and post-training | planned |
 | **VI** · Beyond the basics | 29–32 | Weigh new architectures, LLM systems, failure modes, evaluation and governance | planned |
 
-## one sentence, thirty episodes
+## one sentence, thirty-two episodes
 
 > **"The cat sat on the mat because it was tired."**
 
@@ -309,7 +309,7 @@ Watch in order in the [YouTube playlist](https://www.youtube.com/playlist?list=P
 
 ## run the notebooks
 
-Every notebook runs in **Google Colab** with no install: open it from the [course table](#course) and choose *Runtime → Run all*. The notebooks for Episodes 2–11 use only `numpy`; the ones that measure a real model download GPT-2 small (about 500 MB) once. A CPU is enough for all of them.
+Every notebook runs in **Google Colab** with no install: open it from the [course table](#course) and choose *Runtime → Run all*. The notebooks for Episodes 2–11 use only `numpy` and `matplotlib`; the ones that measure a real model download GPT-2 small (about 500 MB) once. A CPU is enough for all of them.
 
 **Locally** (Python 3.12+, the same as Colab):
 
@@ -322,7 +322,7 @@ pip install -r requirements.txt
 python tools/check_notebooks.py --fast
 # PASS  Episode 02 - Numbers as Geometry Vectors/notebook.ipynb  (1 s)
 # ...
-# 8 passed, 0 failed, 7 skipped
+# 10 passed, 0 failed, 7 skipped
 python tools/check_notebooks.py "Episode 01 - What an LLM Really Is/notebook.ipynb"
 # PASS  Episode 01 - What an LLM Really Is/notebook.ipynb
 ```

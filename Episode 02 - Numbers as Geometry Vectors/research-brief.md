@@ -28,7 +28,7 @@ Episode 1 used this sentence for next-token probabilities. Here each word gets a
 | φ | Angle between two vectors. φ is used because θ is reserved for model parameters (Episode 1) |
 | cos φ | Cosine similarity |
 
-x and y are already in use (x for tokens in Episode 1; y for labels in Episode 6), so this episode avoids them.
+x and y are already in use (x for tokens in Episode 1; y for labels in Episode 7), so this episode avoids them.
 
 ## 1. Cold open: three words
 
@@ -54,7 +54,7 @@ The dot product also has a geometric form. If φ is the angle between a and b:
 
 > a · b = ‖a‖ ‖b‖ cos φ [S19]
 
-Two readings. First, the dot product measures how far one vector reaches along another: project one onto the other, then multiply by the length [S14]. Second, the sign gives the relationship: positive means roughly the same direction, zero means perpendicular, negative means opposing [S14, S19]. IBM's transformer overview makes the same point in an attention setting: "If they're not aligned, their dot product will be small or negative" [S24]. Episode 17 returns to this.
+Two readings. First, the dot product measures how far one vector reaches along another: project one onto the other, then multiply by the length [S14]. Second, the sign gives the relationship: positive means roughly the same direction, zero means perpendicular, negative means opposing [S14, S19]. IBM's transformer overview makes the same point in an attention setting: "If they're not aligned, their dot product will be small or negative" [S24]. Episode 19 returns to this.
 
 **The sun picture (Kinvecta analogy, original to this series).** Take the two arrows outside at noon. Sunlight arrives parallel, so every point drops straight down. Lay the first arrow along the ground; the second arrow's shadow on it is the projection, and shadow length (with its sign) × the first arrow's length is the dot product. A flashlight is a point source and would stretch the shadow with distance, so the sun, not a flashlight, is the honest picture.
 

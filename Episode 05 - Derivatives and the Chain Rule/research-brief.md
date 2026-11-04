@@ -34,7 +34,7 @@ In this episode the quantity −ln p is called **surprisal**, the term Episode 4
 | ∇f | Gradient: the vector of all partial derivatives |
 | D_a f | Directional derivative: slope of f in the unit direction a |
 | Δ | A small change in an input |
-| η | Step size: how far we move against the gradient. Episode 8 calls it the learning rate |
+| η | Step size: how far we move against the gradient. Episode 9 calls it the learning rate |
 | R | Total weight of the other candidates (0.70 here), held fixed while z changes |
 
 Not used: H (still entropy from Episode 4), ε (replaced by Δ and η), and θ for angles (φ from Episode 2).
@@ -94,7 +94,7 @@ Goodfellow calls the η² term "the correction we must apply to account for the 
 - η = 1.0: f = 19. Up.
 - f falls for every η between 0 and 0.556 (= 40/72). The best step is η = 20/72 ≈ 0.278, giving f ≈ 0.222. The optimal-step formula in Goodfellow's Eq. 4.10 gives the same 0.278 [S37].
 
-So "small" means small compared with the curvature. Episode 8 turns this into a slider.
+So "small" means small compared with the curvature. Episode 9 turns this into a slider.
 
 ## Section 7: Math Lab (about 3 minutes)
 
@@ -110,7 +110,7 @@ All probabilities are the illustrative Episode 1 values, and Episode 4's identit
 
 **Step 5, the nudge.** Raising z by 0.10 moves p from 0.300 to 0.321 and the surprisal from 1.204 to 1.135 nats. The first-order estimate was −0.070, and the true change is −0.069. A step of 1.0 changes the surprisal by −0.584, against an estimate of −0.70, so the straight-line estimate fails at large steps.
 
-**Note.** You cannot nudge one probability by itself: under softmax the others must move so that the total stays 1. The knob is the score z. The same calculation for all four candidates gives −(1 − p) for "mat" and +p for each other candidate. This is the first look at the backward pass in Episode 12.
+**Note.** You cannot nudge one probability by itself: under softmax the others must move so that the total stays 1. The knob is the score z. The same calculation for all four candidates gives −(1 − p) for "mat" and +p for each other candidate. This is the first look at the backward pass in Episode 14.
 
 ## Section 8: Myth check: "the gradient points to the bottom" (about 1.5 minutes)
 
@@ -157,7 +157,7 @@ No image from [S37] or [S38] is reused.
 - Slope the slow way for f(z) = z² at 3: steps 1, 0.1, 0.01 give 7, 6.1, 6.01; the power rule gives 6.
 - Surprisal's slope at p = 0.30 is −1/p = −3.33; nudging p to 0.32 predicts 1.137 against the true 1.139.
 - Tiny chain: g(z) = 3z, f(u) = u² at z = 1 gives 6 × 3 = 18, and 9z² → 18z → 18 the long way.
-- The four-word gradient is −0.70, +0.20, +0.15, +0.35 (sum 0), included as a first look at backpropagation (Episode 13).
+- The four-word gradient is −0.70, +0.20, +0.15, +0.35 (sum 0), included as a first look at backpropagation (Episode 14).
 - Check question answer worked in the video: ∇f = (4, 4), (−1, −1)/√2, √32 ≈ 5.66.
 
 ## Sources

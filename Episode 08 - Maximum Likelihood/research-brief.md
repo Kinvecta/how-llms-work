@@ -1,4 +1,4 @@
-# Episode 8: What Learning Means, Part 2: Maximum Likelihood
+# Episode 8: What Learning Means, Part 2: Maximum Likelihood, by Hand
 
 **Series:** How Large Language Models Work: From Math to Transformers
 **Runtime:** 10:36

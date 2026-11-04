@@ -99,7 +99,7 @@ About 15 minutes.
 
 1. As a point (one step along axis 1, one along axis 2, none along axis 3) and as an arrow from the origin to that point.
 2. Positive: the vectors lean the same way. Zero: perpendicular. Negative: they point against each other.
-3. The formula divides by ‖a‖ ‖b‖, so scaling either vector cancels out. Length matters whenever the raw dot product is the score, as in attention (Episode 17).
+3. The formula divides by ‖a‖ ‖b‖, so scaling either vector cancels out. Length matters whenever the raw dot product is the score, as in attention (Episode 19).
 4. cat–mat (0.71 against 0). The dot product with mat changes from 1 to 3; the cosine stays at 0.71.
 5. That every pair of words sharing a relation (male → female, say) is separated by roughly the same offset vector.
 6. A small number of rogue dimensions, often one to three of 768, are so large that they dominate the cosine, so unrelated words look nearly identical (Timkey and van Schijndel, 2021).

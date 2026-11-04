@@ -1,5 +1,5 @@
 How Large Language Models Work: From Math to Transformers
-Episode 8: What Learning Means, Part 2: Maximum Likelihood
+Episode 8: What Learning Means, Part 2: Maximum Likelihood, by Hand
 Narrated by Mark (AI voice clone of his own voice). Transcript.
 
 [0:00 Intro, then: two roads, one number]
