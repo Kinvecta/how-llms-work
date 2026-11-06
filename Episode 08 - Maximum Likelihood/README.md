@@ -93,7 +93,7 @@ The constant is the same for both lines; only half the sum of squared errors dif
 | Gaussian (bell curve) | The noise distribution behind squared error |
 | Spread, τ (tau) | How wide the bell curve is. Goodfellow et al. use another letter; this series saves σ for the sigmoid |
 | Categorical distribution | A probability for each word in the vocabulary: the softmax output |
-| Generalization | Doing well on data the model has never seen (Episode 10) |
+| Generalization | Doing well on data the model has never seen (Episode 11) |
 
 ## Run the notebook
 
@@ -147,7 +147,7 @@ About 15 minutes.
 5. 0.5 × 0.25 = 0.125, × 0.8 = 0.1. −ln 0.1 = 2.303, divided by three terms: L = 0.768 nats.
 6. The constant ½ ln 2π = 0.919, plus 2²/2 = 2: 2.919.
 7. From assuming y = ŷ + Gaussian noise: minus the log of the bell curve's density is a constant, ½ ln(2πτ²), plus the squared error over 2τ². The spread τ must stay fixed, so the constant and the factor 1/(2τ²) don't depend on the knobs.
-8. False. The loss is averaged over the training data. A model can memorize those and still stumble on text it has never seen; whether it generalizes is a separate question (Episode 10).
+8. False. The loss is averaged over the training data. A model can memorize those and still stumble on text it has never seen; whether it generalizes is a separate question (Episode 11).
 
 </details>
 
@@ -162,6 +162,8 @@ About 15 minutes.
 
 **Previous:** [Episode 7, The Loss, by Hand](https://youtu.be/ia7aFhn_20k) · [episode page](../Episode%2007%20-%20The%20Loss%2C%20by%20Hand/)
 
-**Next:** Episode 9, gradient descent: walking downhill for real. We have a loss and a gradient; now the model takes thousands of steps, and we meet the learning rate, the one knob that decides whether it settles or blows up. The notebook is ready: [Episode 09 - Gradient Descent](../notebooks/Episode%2009%20-%20Gradient%20Descent.ipynb).
+**Next:** [Episode 9, Gradient Descent, Part 1: The Learning Rate, by Hand](../Episode%2009%20-%20Gradient%20Descent%2C%20Part%201/): we have a loss and a gradient; now the model takes thousands of steps, and we meet the learning rate, the one knob that decides whether it settles or blows up ([watch](https://youtu.be/9H0EDfR4wFo)).
+
+**Note:** generalization, called "episode ten" in this video, is now [Episode 11](../course/README.md#episodes): gradient descent became two episodes, 9 and 10.
 
 [← Back to the course](../README.md)

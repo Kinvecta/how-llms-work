@@ -1,6 +1,6 @@
 # Glossary and notation
 
-The terms and symbols introduced in Episode 1, in plain language. So far the glossary covers Episode 1 only; each later episode's page defines its own key terms and symbols. The series fixes each symbol once and keeps it, so a letter introduced in Episode 1 means the same thing in Episode 32.
+The terms and symbols introduced in Episode 1, in plain language. So far the glossary covers Episode 1 only; each later episode's page defines its own key terms and symbols. The series fixes each symbol once and keeps it, so a letter introduced in Episode 1 means the same thing in Episode 33.
 
 [Back to the README](../README.md) · [syllabus](../course/)
 

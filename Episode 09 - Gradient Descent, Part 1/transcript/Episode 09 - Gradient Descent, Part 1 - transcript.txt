@@ -1,0 +1,102 @@
+How Large Language Models Work: From Math to Transformers
+Episode 9: Gradient Descent, Part 1: The Learning Rate, by Hand
+Narrated by Mark (AI voice clone of his own voice). Transcript.
+
+[0:00 Intro, then: three hikers, one slope]
+Once upon a time, three hikers stood at the top of the same foggy hill. The fog was so thick that none of them could see the valley. All they could feel was the slope under their boots. So each of them did the sensible thing: feel which way is downhill, and take a step that way. The first hiker took tiny, careful steps. When the sun went down, she was still near the top. The second hiker took giant leaps. He flew right over the valley floor and landed high up on the far side. The third hiker took steps that were just right. Five steps, and she was standing at the bottom.
+
+[0:44 The stride decides everything]
+Here's what makes the story interesting. All three felt the same slope. All three walked in the same direction. The only thing that was different was the size of the stride. And the stride decided everything. When a language model learns, it walks downhill on its loss, exactly like these hikers. And that stride has a name. It's called the learning rate.
+
+[1:06 One step, then thousands]
+In episode six, we took one step down a bowl. We started at height three. A step of size zero point one brought us down to one point three six. A step of size one threw us up to nineteen. But training never takes just one step. It takes thousands of them, and every one follows the same rule. So today's question is simple to ask: what happens when you take that step again, and again, and again? And how big should it be?
+
+[1:32 Three parts]
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode nine: gradient descent, part one, the learning rate. We'll go in three parts. First, the update rule, read slowly, one piece at a time. Second, a valley with just one knob, where we'll work out every step by hand, until we can predict which step sizes work. And third, the bowl from episode six, where we'll find out who really sets the speed limit. Plus a myth about playing it safe. Every number is in the companion notebook, linked in the description.
+
+[2:05 A quick reminder: what a gradient is]
+Before the rule, one quick reminder, in case gradients are new to you. The gradient is a list of slopes, one for every knob. Each slope says: if I nudge this knob up a little, how fast does the loss go up? Put together, the gradient points in the direction that goes uphill the fastest. And the bigger it is, the steeper the ground. So if the gradient points uphill, which way do we want to go? The opposite way.
+
+[2:31 The update rule, one piece at a time]
+Part one: the rule. Here it is. Theta gets replaced by theta, minus eta, times the gradient of the loss. Let's read it piece by piece. Theta is all the knobs. The gradient is the list of slopes. The minus sign turns us around, so we walk downhill instead of up. And eta, the Greek letter that looks like a little n, is the learning rate: how far to go. Goodfellow, Bengio and Courville describe it as "a positive scalar determining the size of the step."
+
+[3:01 Again and again: steps shrink by themselves]
+Then you do it again. And again. You stop when the gradient is zero, or very close to zero. And here's something lovely. The step is eta times the slope. So as you get near the bottom, where the ground flattens out, the slope shrinks, and your steps shrink with it, all by themselves. Even with the same eta, the hiker naturally slows down as she arrives.
+
+[3:24 Two ways to fail]
+So why does eta need any care at all? Because it can fail in two opposite ways. Ruder's survey of gradient descent names both of them. Too small leads to "painfully slow convergence." Too large can make the loss fluctuate, "or even to diverge." Diverge means the numbers run away and grow without end. 3Blue1Brown describes it as overshooting and oscillating. We're going to watch both failures happen, by hand, with real numbers.
+
+[3:52 The simplest valley: f(z) = κz²]
+Part two: a valley with one knob. Here's the simplest valley there is. F of z equals kappa, times z squared. Z is our one knob. The bottom of the valley is at z equals zero. And kappa, a positive number, says how steep the walls are. Kappa equals one is a gentle valley. Kappa equals three has walls three times as steep. The slope of this valley is two kappa z. That comes straight from episode five: the slope of z squared is two z, and kappa just comes along for the ride.
+
+[4:23 One step, slowly: the factor 1 − 2ηκ]
+Now let's take one step, slowly. The new z is the old z, minus eta, times the slope. The slope is two kappa z. So the new z is z, minus eta times two kappa z. Both terms have a z in them, so pull it out to the front. The new z equals one minus two eta kappa, times the old z. That bracket, one minus two eta kappa, is the most important number in this episode. Let's call it the factor.
+
+[4:53 What the factor means]
+What does the factor mean? Remember, the bottom is at zero, so z is simply your distance from the bottom. If the factor is zero point eight, every step keeps eighty percent of your distance, and removes twenty percent. And because every step uses the same factor, after two steps you multiply by it twice. After k steps, k times. So after k steps, z equals the factor to the power k, times where you started.
+
+[5:21 η = 0.1 by hand: slowly]
+Let's run it. Kappa equals one. Start at z equals one. And try eta equals zero point one. The factor is one minus two times zero point one, which is zero point eight. Step one: one times zero point eight is zero point eight. Step two: zero point eight times zero point eight is zero point six four. Step three: zero point six four times zero point eight is zero point five one two. Every step closer. But slowly. This is our careful first hiker.
+
+[5:52 η = 0.25: halving]
+Now a bigger step: eta equals zero point two five. The factor is one minus two times zero point two five. That's one minus zero point five, so zero point five. Step one: zero point five. Step two: zero point two five. Step three: zero point one two five. Every step cuts the distance in half. Much faster than before.
+
+[6:16 η = 0.5: one step]
+Bigger again: eta equals zero point five. The factor is one minus two times zero point five. One minus one. Zero. Zero times anything is zero. So after a single step, z is exactly zero. You're at the bottom in one move. Why? The slope at z equals one is two. Half of two is one. And one is exactly the distance to the bottom. This is our third hiker, the one who got it just right.
+
+[6:44 η = 0.75: hop and shrink]
+Now let's be bold: eta equals zero point seven five. The factor is one minus one point five: minus zero point five. A negative factor. What does that mean? It means z changes sign every step. You jump past the bottom and land on the other side. Minus zero point five. Then zero point two five. Then minus zero point one two five. Hopping from side to side, but each hop is smaller. You still arrive. Just with a little dance.
+
+[7:13 η = 1: bounce forever]
+Eta equals one. The factor is one minus two: minus one. So z goes from one, to minus one, to one, to minus one. Forever. Picture a ball rolling in a frictionless valley, reaching exactly the same height on each side, never settling. You never get closer and you never get further. You're stuck bouncing.
+
+[7:34 η = 1.25: blow up]
+And eta equals one point two five. The factor is one minus two point five: minus one point five. Step one: minus one point five. Step two: two point two five. Step three: minus three point three seven five. Every step you're further from the bottom than before. That's divergence. This is our second hiker, flung up the far side of the valley, again and again, higher every time.
+
+[7:59 The whole story: one number line for η]
+Let's put all of that on one number line. From zero up to one half over kappa, you slide in from one side. At exactly one half over kappa, you land in one step. Between that and one over kappa, you hop and shrink. At one over kappa, you bounce forever. Above it, you blow up. So gradient descent settles exactly when eta is between zero and one over kappa. If that number line just made the learning rate click for you, that's the moment to subscribe, or follow wherever you're watching.
+
+[8:29 How slow is safe? Counting steps]
+So small is safe. But how slow is safe? Let's count the steps until we're within zero point zero one of the bottom, starting from one. With eta equals zero point zero one, it takes two hundred twenty-eight steps. With zero point two five, seven steps. With zero point five, one step. For small eta, the count is roughly two point three, divided by eta. So make the step ten times smaller, and the walk takes about ten times longer.
+
+[8:55 The bowl: two knobs, two steepnesses]
+Part three: the bowl from episode six. F equals z one squared, plus two z two squared. Two knobs now. We start at the point one, one, at height three. Notice the two in front of z two squared. That direction is steeper: its walls are twice as steep as the z one direction. The gradient is two z one, and four z two. One slope for each knob.
+
+[9:23 Each knob, its own factor: 1.36]
+Here's the beautiful part. Each knob only cares about its own slope. So each one gets its own factor, exactly like our one-knob valley. Z one is multiplied by one minus two eta. Z two is multiplied by one minus four eta. With eta equals zero point one, those factors are zero point eight and zero point six. So after one step, the height is zero point eight squared, which is zero point six four, plus two times zero point six squared, which is two times zero point three six, or zero point seven two. Add them: one point three six. Exactly the step from episode six.
+
+[10:02 The steepest direction sets the limit]
+For the walk to settle, both factors have to stay smaller than one in size. The z one factor needs eta below one. The z two factor needs eta below zero point five. So the limit is zero point five, set by the steeper direction. The steepest direction sets the speed limit for everyone. At eta equals zero point five, z two just flips between minus one and one, and the height gets stuck at two. At eta equals one, the heights go three, nineteen, one hundred sixty-three, one thousand four hundred fifty-nine.
+
+[10:36 One good step isn’t enough]
+Now, episode six told us something that sounds different. One step goes downhill for any eta below zero point five five six, and the best single step is about zero point two seven eight. That's still true, for one step. But repeat the step, and the limit drops to zero point five. Try eta equals zero point five two. The heights go three, then two point three three four, which is down, and then two point seven two one, which is back up. The first step looked great. The second one gave it back.
+
+[11:09 The best repeated step: η = 1/3]
+So what's the best step if you're going to repeat it? Make both factors the same size. One minus two eta, equals minus, one minus four eta. Solve that, and eta equals one third. Both factors become one third. Every step, the height divides by nine: zero point three three three, zero point zero three seven, zero point zero zero four. And episode six's best single step, zero point two seven eight? It starts faster, zero point two two two after one step. But by step two it's already behind, and by step three it's twice as high: zero point zero zero eight against zero point zero zero four. Five steps at one third, and both knobs are within zero point zero one of the bottom.
+
+[11:54 Stretched bowls are slow]
+Our bowl was only stretched two to one. What if it's stretched fifty to one: z one squared, plus fifty z two squared? Now the best possible factor is zero point nine six one, and it takes a hundred and sixteen steps. And this isn't some made-up extreme. Episode seven's loss for the three dots is a stretched bowl too, about forty-six to one. Best factor, zero point nine five eight, around a hundred and seven steps. Goodfellow and colleagues say this kind of ill-conditioning can leave gradient descent "stuck."
+
+[12:25 A skateboarder in a half-pipe]
+Here's a picture for that. Think of a skateboarder in a long half-pipe that slopes gently downhill. The walls are steep. The floor is gentle. The slope across the half-pipe is big, so even a modest learning rate sends her flying from one wall to the other. To stop that, you have to shrink the stride, and then she barely creeps along the floor. That's a stretched bowl. The steep walls set the speed limit, and the gentle floor pays for it.
+
+[12:50 Not every loss is a bowl]
+Not every loss is a bowl, though. Remember mat's surprisal from episode five? Its slope with respect to mat's score was minus zero point seven zero. So each step raises the score by zero point seven zero, times eta. With eta equals zero point one, mat's probability goes from zero point three zero to zero point three one five. With eta equals one, to zero point four six three. With eta equals five, to zero point nine three four, in one step. Here, bigger was faster in every run we checked. There's no bottom to fly past: the loss keeps falling toward zero but never reaches it. So the bowl is the hard case.
+
+[13:33 Myth: a smaller learning rate is always safer]
+Now the myth. "A smaller learning rate is always safer." There's something to it. Anything between zero and one over kappa settles, and too large can blow up. But look at the counts: two hundred twenty-eight steps at zero point zero one, against seven at zero point two five. Where the ground is nearly flat, the slope is already tiny, so a tiny eta crawls. And on our bowl, the best step was one third, not the smallest step. Real training runs have a budget. Too small, and the budget runs out before you arrive.
+
+[14:08 Recap]
+Let's put it all together. Gradient descent repeats one rule: theta, minus eta, times the gradient. In a valley kappa z squared, every step multiplies your distance from the bottom by the same factor, one minus two eta kappa. So eta has to stay below one over kappa, and exactly half of that lands in one step. In a bowl with several directions, the steepest one sets the limit. And when a bowl is stretched, every eta is slow.
+
+[14:37 Your turn]
+Your turn. Take f of z equals three z squared. Question one: for which eta does gradient descent settle? Question two: starting from z equals one, with eta equals zero point one, what are z and f after one step? Question three: which eta lands exactly at the bottom in a single step? Pause here, grab a pencil, and work it out.
+
+[15:03 The answer]
+Here's the answer. Kappa is three, so eta has to be between zero and one third. With eta equals zero point one, the factor is one minus two times zero point one times three. That's one minus zero point six, which is zero point four. So z is zero point four, and f is three times zero point four squared: three times zero point one six, which is zero point four eight. Down from three. And the one-step landing is half of one third: eta equals one sixth. If you got all three, you can predict a good learning rate before you ever press run.
+
+[15:41 Try this week]
+Here's what to try this week. One: pick your own kappa, find the eta that lands in one step, and check it with a pencil. Two: in the notebook, slide eta across one over kappa, and watch the steps flip from settling to blowing up. Three: on the bowl, run five steps at zero point two seven eight and five steps at one third, and see which one wins. The one mistake to avoid: judging a learning rate by a single step. One step can go down while the next ten go up.
+
+[16:13 Next: mean vs sum, and mini-batches]
+Next time, episode ten: gradient descent, part two. Why the very same eta can be fine on an average and explode on a sum. And mini-batches: why real training never uses all its data for a single step, and why that turns out to be a feature, not a bug. So tell me in the comments: which hiker are you? Tiny steps, giant leaps, or just right? The notebook and every source are in the description. Subscribe or follow so you don't miss episode ten, and I'll see you there.

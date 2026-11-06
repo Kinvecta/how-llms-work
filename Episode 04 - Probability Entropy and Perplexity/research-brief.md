@@ -53,7 +53,7 @@ The chain rule of probability multiplies these factors [S31 Eq. 3.6; S33 Eq. 3.4
 
 > P(x₁, …, xₙ) = Π (t = 1 to n) p(xₜ | x<ₜ)
 
-The first factor has an empty prefix (Episode 11: with no start token, the model scores only the later factors). Each later factor conditions on everything before it. In the running example, the factor for "mat" after "The cat sat on the" is 0.30 (illustrative).
+The first factor has an empty prefix (Episode 12: with no start token, the model scores only the later factors). Each later factor conditions on everything before it. In the running example, the factor for "mat" after "The cat sat on the" is 0.30 (illustrative).
 
 **Speaker note.** The calculus chain rule (Episode 5) is a different rule with the same name.
 

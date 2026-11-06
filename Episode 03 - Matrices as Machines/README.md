@@ -26,7 +26,7 @@ Four numbers, arranged in a square, move every point in the plane at once. Lines
 - Multiplying matrices is composition, right to left: ABu applies B first. Order changes the result.
 - A linear map can change dimension (3 numbers in, 2 out) but can never shift. The bias β does the shifting, which makes the layer affine.
 - Stack the token vectors as the rows of U and the whole sentence goes through the layer in one product, U Wᵀ + β.
-- Two linear layers back to back are one: W′(Wu + β) = (W′W)u + W′β. The power of depth comes from the nonlinearity between layers (Episode 13).
+- Two linear layers back to back are one: W′(Wu + β) = (W′W)u + W′β. The power of depth comes from the nonlinearity between layers (Episode 14).
 
 ## The worked product
 
