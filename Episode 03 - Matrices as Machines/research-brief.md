@@ -71,7 +71,7 @@ So AB = [[2, 1], [0, 2]]. Four dot products, four entries.
 
 u has d components, W has shape d_out × d, and β and h have d_out components. Goodfellow, Bengio and Courville write the same form as z = Wx + b and call it an affine transformation [S28, §6.3]; the symbols here differ because x and b are reserved in this series.
 
-"Linear layer" is the common name, and the book calls an affine map with no nonlinearity a "linear unit" [S28, §6.2.2.1]. Strictly, a linear map keeps the origin fixed [S25]; when β is not zero the origin moves, so the map is affine. W bends the grid; β moves it. A hidden layer then applies a fixed nonlinearity ψ, entry by entry, after the affine step [S28, §6.3]; Episode 14 covers ψ.
+"Linear layer" is the common name, and the book calls an affine map with no nonlinearity a "linear unit" [S28, §6.2.2.1]. Strictly, a linear map keeps the origin fixed [S25]; when β is not zero the origin moves, so the map is affine. W bends the grid; β moves it. A hidden layer then applies a fixed nonlinearity ψ, entry by entry, after the affine step [S28, §6.3]; Episode 15 covers ψ.
 
 **The mixing board (Kinvecta analogy, original to this series).** Three input strips (cat, mat, tired) feed two output buses through a 2×3 grid of dials: each output is a weighted sum of the inputs, and the grid of dials is W. A trim knob on each bus adds a fixed amount: the trim is the bias. Disclosed gaps: a real board has no such knob, and here the dials are set by hand, while a model learns them (Episode 9).
 
@@ -97,7 +97,7 @@ All weights are hand-chosen and illustrative, not learned.
 
 **Evidence against.** Step 5 collapses two layers into one matrix. Goodfellow's argument is that if a layer's function were linear, "the feedforward network as a whole would remain a linear function of its input," and "we must use a nonlinear function to describe the features" [S28, §6.1].
 
-**Evidence for a narrower claim.** Linear layers still do real work: the 3-to-2 layer changes dimension and mixes input components. Added power comes from the nonlinearity between layers (Episode 14).
+**Evidence for a narrower claim.** Linear layers still do real work: the 3-to-2 layer changes dimension and mixes input components. Added power comes from the nonlinearity between layers (Episode 15).
 
 **A second overstatement: "every layer is a matrix multiply."** A hidden layer is an affine map followed by a nonlinearity [S28, §6.3], and attention applies a softmax to each row of the score matrix [S29, §9.4.1], which is not a matrix product.
 

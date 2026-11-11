@@ -1,0 +1,114 @@
+How Large Language Models Work: From Math to Transformers
+Episode 10: Gradient Descent, Part 2: Mean vs Sum, and Mini-batches
+Narrated by Mark (AI voice clone of his own voice). Transcript.
+
+[0:00 Intro, then: an experiment. Take a guess]
+Let's run an experiment. Take episode seven's three dots and line A, and take one step of gradient descent with a step size of zero point one. The loss falls, from one third to about zero point one three three. A nice, calm step. Now I'm going to change one word in how the loss is written. Instead of averaging the three penalties, we add them up. Same dots. Same line. Same step size. Before I show you: what do you think happens? Does the line get better, stay about the same, or get worse? Take a guess.
+
+[0:45 One word, and the loss explodes]
+It gets worse. Keeping score the same way as before, one step takes the loss to one point two. Another step: five point nine five. Another: thirty-one point seven. One word turned a calm walk into an explosion. If you guessed better, you're in good company. By the end of this episode, you'll be able to predict that explosion before it happens.
+
+[1:08 Second puzzle: a chef tasting stew]
+And there's a second puzzle. A real language model learns from billions of words. Yet it never looks at all of them before taking a step. It grabs a small handful, takes a step, grabs another handful, takes another step. It's like a chef tasting a chunky stew. She doesn't eat the whole pot to check the seasoning. She takes a spoonful. One spoonful might be mostly broth, the next mostly potato. But taste after taste, she learns the pot. Today we'll see why that works, and what it costs.
+
+[1:39 Two parts today]
+This is How Large Language Models Work, from math to transformers. I'm Mark, and this is episode ten: gradient descent, part two, mean versus sum, and mini-batches. Two parts today. Part one, the explosion: why adding instead of averaging changes which step sizes are safe. Part two, the spoonful: why a small handful of data is enough, worked out by hand. And this time, I'll stop and let you try things before I show the answer, so keep a pencil nearby. Every number is in the companion notebook, linked in the description.
+
+[2:11 Reminder: the steeper the valley, the smaller the safe step]
+One reminder from episode nine, because we'll need it. Picture a valley: kappa, times z squared. Z is how far you are from the bottom. Kappa is how steep the walls are. And eta is the step size, also called the learning rate. Each step multiplies your distance from the bottom by one minus two eta kappa. If that number is smaller than one in size, you shrink toward the bottom. If it's bigger than one, you fly out. That's why eta has to stay below one over kappa. In plain words: the steeper the valley, the smaller the safe step. Hold on to that sentence.
+
+[2:46 Part 1: the slope of an average]
+Part one: mean versus sum. Mean is just another word for average. Remember how episode seven built the loss. Every dot gives one penalty: its error, squared. With N dots, the loss is the average of those N penalties. Here's the fact that makes today easy. Nudge W a little. Each penalty changes by its own slope. So their average changes by the average of those slopes. The slope of an average is the average of the slopes. That means we can find the gradient one dot at a time, and then combine.
+
+[3:20 The slope for one dot, piece by piece]
+So what's the slope for one dot? First, the error. Error means the dot's height, minus the line's height. Take the third dot on line A. The line says six. The dot is at five. Five minus six: minus one. Negative means the line is too high. Now the slope with respect to W, meaning: if I nudge W, how fast does this dot's penalty change? It's minus two, times the input, times the error. The two comes from the square, like the two in episode nine's valley. The input is there because W gets multiplied by the input. And the minus, because raising W lifts the line, which pushes the error down.
+
+[3:59 Dot 3 by hand: 6 for W, 2 for β]
+Let's use it. The third dot has input three and error minus one. For W: minus two, times three, times minus one. Six. For beta, it's the same thing without the input: minus two, times minus one. Two. So the third dot's gradient is six for W, and two for beta. The gradient is just that pair of slopes, one for each knob. Does positive six make sense? It says raising W makes things worse. And yes: line A is already too high at dot three.
+
+[4:32 Your turn: dot 1]
+Now you do dot one. Line A passes exactly through it. So what's its error? And what does that make its slopes? Try it.
+
+[4:44 One gradient per dot]
+The error is zero, so both slopes are zero. Anything times zero is zero. Dot two is the same story. A dot the line already hits doesn't pull at all. So the three gradients are: zero and zero. Zero and zero. And six and two. Two dots are happy. Only the third one is pulling.
+
+[5:06 Mean vs sum: same direction, 3× longer]
+Now combine them, both ways. Average the W slopes: zero, plus zero, plus six, over three, is two. Average the beta slopes: zero, plus zero, plus two, over three, is two thirds. So the gradient of the mean is two for W, and two thirds for beta. Add them instead, and you get six for W, and two for beta. That's the gradient of the sum. Same direction. Exactly three times longer. Three, because there are three dots.
+
+[5:37 One step with the mean: a calm step]
+Take one step with the mean. Eta is zero point one. The new W is two, minus zero point one times two: one point eight. The new beta is zero, minus zero point one times two thirds: about minus zero point zero seven. Is that line better? Its three errors are on screen. Square them, average them, and the loss is about zero point one three three. Down from one third. A calm step.
+
+[6:03 Your turn: the sum step]
+Now the same step with the sum, and this one is yours. The gradient is six for W, and two for beta. Eta is still zero point one. What are the new W and the new beta? And before you compute: do you expect this line to be better or worse? Work it out.
+
+[6:23 The sum step by hand: we flew over the valley]
+W is two, minus zero point one times six: one point four. Beta is zero, minus zero point one times two: minus zero point two. Now check that line. Its errors are zero point eight, one point four, and one. All positive now, so the line is too low everywhere. Square them: zero point six four, one point nine six, and one. That adds up to three point six. To compare fairly with before, divide by three: one point two. From one third, up to one point two. We didn't land in the valley. We flew right over it.
+
+[6:59 Why it exploded: a valley N times as steep]
+So why did that happen? Adding instead of averaging multiplies every slope by N. And a loss with N times the slope is a valley N times as steep. Now use episode nine's sentence: the steeper the valley, the smaller the safe step. For our three dots, the notebook works out the safe limit for the mean: about zero point one eight. So you tell me the limit for the sum. Three times as steep, so divide by three. About zero point zero six. And our step, zero point one, sits right between them. Safe for one. Explosive for the other.
+
+[7:36 The rule: η on the sum = N × η on the mean]
+Here's another way to say the same thing. A step size on the sum acts like N times that step size on the mean. So zero point one on the sum of three dots acts like zero point three on the mean. And zero point three is way past the limit of zero point one eight. That's the whole explosion, in one line. If that just clicked, that's the moment to subscribe, or follow wherever you're watching.
+
+[8:01 A teacher and the class average]
+Here's a picture to remember it by. A teacher adjusts tomorrow's lesson based on today's quiz. If she looks at the class average, a rough day means a small correction. If she looks at the total of all thirty students' missed points, the very same day looks thirty times worse, and she overreacts. The total isn't wrong. She'd just have to react thirty times more gently, and change that again every time the class size changes. The average spares her that. And that's the real reason the mean is the usual default: the same step size keeps working when the amount of data changes.
+
+[8:35 In real code, and the common mistake]
+You'll see this in real code. PyTorch, a popular toolkit, averages its cross-entropy loss, episode eight's loss, unless you ask it not to. But not every piece of code does. So here's the common mistake: copying a learning rate from someone else's setup without checking whether their loss is a mean or a sum. Same number, completely different step.
+
+[8:58 Check 1: four copies of one valley]
+Quick check on part one. Episode nine's valley was f of z equals three z squared, and a step size of zero point one settled nicely there. Now suppose the loss is the sum of four copies of that valley. One: what's the new valley? Two: what's the new safe limit? Three: what happens at zero point one? The questions are on screen. Pause here and try them.
+
+[9:25 Check 1: the answer]
+Here's the answer. Four copies of three z squared add up to twelve z squared. So kappa is twelve, and the safe limit is one over twelve, about zero point zero eight three. At zero point one: two, times zero point one, times twelve, is two point four. One minus two point four is minus one point four. Bigger than one in size. Each step lands on the other side, one point four times farther out. The same step that settled on one copy explodes on the sum of four.
+
+[9:59 Part 2: billions of terms]
+Part two: the spoonful. Here's the problem. For a language model, N isn't three. It's billions. To take one honest step, you'd work out a slope for every single term. A billion terms for one step. Then a billion more for the next. Ruder's survey of gradient descent notes this can be very slow, and impossible when the data doesn't fit in memory. So what do we do instead?
+
+[10:25 Stir, spoonful, step: the mini-batch]
+We do what the chef does. Stir the pot: shuffle the data. Take a spoonful: grab a small random handful, average just those slopes, and take a step. Then take the next spoonful. That handful is called a mini-batch. All N terms together are the full batch. And when you hear stochastic gradient descent, stochastic just means random: each step uses a random mini-batch. Ruder says this is typically "the algorithm of choice."
+
+[10:54 Wrong direction? Quick steps, leaning downhill]
+But hold on. If we only look at a few examples, isn't our direction wrong? Each step, a little, yes. 3Blue1Brown has a lovely picture for it. This isn't one of episode nine's hikers; those differed in stride. This one differs in how carefully he aims. Instead of working out the exact downhill direction before every slow step, he stumbles a bit left and right, but always leaning downhill, and quickly. And because each step costs a handful of examples instead of billions, he takes thousands of steps in the time the careful hiker takes one.
+
+[11:28 A mini-batch of one, by hand]
+Let's check that "leaning downhill" by hand. Back to line A, and just the W slopes: zero, zero, and six. The true, full gradient is their average: two. Now take the smallest mini-batch there is: one dot, picked at random. You'll get zero, or zero, or six. Never two. So here's a question for you. If you did this many, many times and averaged all your draws, what number would you land on?
+
+[12:00 60 draws: the average settles on 2]
+Two. Each dot gets picked a third of the time. So the long-run average is zero, plus zero, plus six, over three. Exactly the full gradient. Watch the draws pile up. The running average wobbles, and then settles right on two.
+
+[12:16 Unbiased, and why the chef has to stir]
+That's not luck. Every dot is equally likely to be picked, so the average over all the picks is the average over all the dots. And that's the full gradient. The word for this is unbiased: usually off on any one draw, but right on average. Notice what it needs, though. The picks have to be random. If the spoon always dips into the same corner of the pot, the taste is off. The chef has to stir.
+
+[12:42 The cost: variance, by hand]
+Now the cost: noise. A single draw is never two. It's zero or six. Let's measure how spread out that is. The usual measure is called the variance: the average squared distance from the mean. Squared, so misses above and below can't cancel. The mean is two. Zero is two away, and two squared is four. That happens twice. Six is four away, and four squared is sixteen. Four, plus four, plus sixteen, is twenty-four. Divide by three. The variance is eight.
+
+[13:15 Your turn: two dots per batch]
+Now use two dots per mini-batch. One rule: after the first pick, put the dot back, so the same dot can come up twice. Three choices, then three choices again: nine equally likely pairs. Average each pair. Your turn: what averages can a pair give, and how many pairs give each one?
+
+[13:37 Nine pairs: half the variance]
+Both picks zero: two ways, times two ways. Four pairs, and the average is zero. Both picks six: only one pair, average six. The other four pairs mix a zero and a six, and average three. The mean is still two. Now the variance. Zero is two away: squared, four. That happens four times: sixteen. Three is one away: squared, one. Four times: four. Six is four away: sixteen, once. Sixteen, plus four, plus sixteen, is thirty-six. Over nine. Four. Twice the dots, half the variance.
+
+[14:16 The typical miss shrinks slowly]
+With eight dots per batch, the variance is one. So the variance falls like one over the batch size. But variance is in squared units. For the typical miss, take the square root. About two point eight with one dot. Two, with two dots. One, with eight dots. Eight times the data, and the miss didn't even drop to a third.
+
+[14:39 100× the work for 10× the precision]
+Goodfellow, Bengio and Courville make the same point with bigger numbers: a hundred times more examples only cuts that typical error by a factor of ten. A hundred times the work, for a step that's only ten times more precise. Better to spend that work on a hundred quick steps instead. That's why a spoonful wins.
+
+[14:59 Check 2: your turn again]
+Your turn again. Three examples have slopes zero, three, and nine. One: what's the full gradient, their average? Two: what's the variance of a mini-batch of one? Three: with two per batch, is the step twice as accurate? Pause here and work it out.
+
+[15:21 Check 2: the answer]
+Here's the answer. Zero, plus three, plus nine, is twelve. Over three: four. The distances from four are four, one, and five. Squared: sixteen, one, and twenty-five. That's forty-two. Over three: fourteen. Two per batch halves the variance, to seven. But twice as accurate? No. The typical miss only drops from about three point seven to about two point six. If you got that last one, you've understood the real cost of noise.
+
+[15:53 A surprise at the bottom: the jiggle never stops]
+One more surprise. Go to the best line, line B, where the full gradient is exactly zero. We're at the bottom. Nothing should move. But look at the dots one at a time. Their W slopes are one third, minus four thirds, and one. Add them up. Zero. Yet none of them is zero on its own. So a mini-batch step still moves, even at the very bottom. And a step is eta times the slope. If the slope from a handful never quite reaches zero, the only way to quiet the jiggling is to shrink eta. Goodfellow and colleagues note this noise doesn't vanish even at a minimum, which is why the learning rate is lowered over time.
+
+[16:31 Recap]
+Let's put it together. The gradient of an average is the average of the gradients. Add instead of average, and every slope gets N times bigger. That makes the valley N times as steep, so the safe step is N times smaller. A mini-batch averages a random handful. It's usually off on any one draw, but right on average. And its typical miss shrinks slowly, like one over the square root of the batch size, so many quick steps beat a few perfect ones.
+
+[16:58 Try this week]
+Here's what to try this week. One: in the notebook, run line A with the mean and with the sum, and watch one settle and the other explode. Two: draw mini-batches of one, two, and eight, and check that the average stays at two while the spread shrinks. Three: make up three slopes of your own, and work out the variance by hand. The one mistake to avoid: reusing a learning rate without checking whether the loss is a mean or a sum.
+
+[17:24 Next: where gradient descent gets stuck]
+Next time, episode eleven: where gradient descent gets stuck. Saddles, shaped like a potato chip. Valleys that aren't the deepest one. And momentum, the trick that helps a rolling ball get through. So tell me in the comments: did you guess the explosion in the cold open? Be honest. The notebook and every source are in the description. Subscribe or follow so you don't miss episode eleven, and I'll see you there.

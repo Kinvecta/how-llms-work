@@ -24,7 +24,7 @@ The facts behind Episode 1, with sources. Every probability in the video was mea
 | p<sub>θ</sub>(xₜ \| x<ₜ) | The model's probability for the next token, given the prefix |
 | ~ | "is drawn from": xₜ ~ p<sub>θ</sub> means the next token is sampled from the distribution |
 
-Temperature is introduced in Episode 24.
+Temperature is introduced in Episode 25.
 
 ## 1. What lands on your disk
 
@@ -74,14 +74,14 @@ Shannon (1951) measured how predictable English is by having people guess the ne
 
 | Stage | What happens | Where in the series |
 |---|---|---|
-| **Pretraining** | Predict the next token at every position of a very large text corpus. The text supplies its own answers (self-supervised). | Episodes 7–17, 26 |
-| **Post-training** | Adapt the model to follow instructions. InstructGPT (2022) set the template: about 40 labelers wrote answers to about 13,000 prompts for fine-tuning; labelers then ranked 4 to 9 answers per prompt to train a reward model; the model was then optimized against that reward on about 31,000 more prompts. [S3] | Episode 29 |
+| **Pretraining** | Predict the next token at every position of a very large text corpus. The text supplies its own answers (self-supervised). | Episodes 7–18, 27 |
+| **Post-training** | Adapt the model to follow instructions. InstructGPT (2022) set the template: about 40 labelers wrote answers to about 13,000 prompts for fine-tuning; labelers then ranked 4 to 9 answers per prompt to train a reward model; the model was then optimized against that reward on about 31,000 more prompts. [S3] | Episode 30 |
 | **Reasoning RL (newer)** | Reinforcement learning on problems with checkable answers, such as math and code. DeepSeek-R1-Zero raised AIME 2024 pass@1 from 15.6% to 71.0% with this stage alone. A 2025 development, not a universal recipe. [S8] | Later in Part V |
-| **Inference** | Running the finished dials, one token at a time. The part you use. | Episode 24 (sampling) |
+| **Inference** | Running the finished dials, one token at a time. The part you use. | Episode 25 (sampling) |
 
 ## 5. Three claims, checked
 
-**"It's a database that copies text."** Partly true: models can reproduce some training text verbatim, so memorization is real (Episode 32). But there is no corpus inside to look up: training compresses patterns into parameters, and a 140 GB file of numbers cannot hold the internet. If our sentence were stored, "mat" would not come back at rank 31.
+**"It's a database that copies text."** Partly true: models can reproduce some training text verbatim, so memorization is real (Episode 33). But there is no corpus inside to look up: training compresses patterns into parameters, and a 140 GB file of numbers cannot hold the internet. If our sentence were stored, "mat" would not come back at rank 31.
 
 **"It understands nothing."** Evidence of internal structure: Li et al. trained a GPT-style model on Othello move sequences, with no rules and no board. A nonlinear probe recovered the board state from its activations with 1.7% error, against about 26% for a randomly initialized network (linear probes did not work in that paper). [S4] Nanda, Lee and Wattenberg then found the board is linearly encoded when squares are labelled *mine* or *yours* relative to the player to move, and that editing those directions changes the model's predicted moves. [S5]
 Evidence of limits: Vafa et al. trained transformers on turn-by-turn taxi directions in Manhattan. Next-turn prediction was near perfect, yet the street map implied by the models bore little resemblance to Manhattan, and small random detours made performance collapse. [S6] Strong prediction does not guarantee a coherent world model.

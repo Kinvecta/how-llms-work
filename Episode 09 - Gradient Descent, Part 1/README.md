@@ -163,6 +163,6 @@ The one mistake to avoid: judging a learning rate by a single step. One step can
 
 **Previous:** [Episode 8, Maximum Likelihood, by Hand](https://youtu.be/u1bSbpKfF6g) · [episode page](../Episode%2008%20-%20Maximum%20Likelihood/)
 
-**Next:** Episode 10, gradient descent, part 2. Why the very same η can be fine on an average and explode on a sum, and mini-batches: why real training never uses all its data for a single step, and why that turns out to be a feature, not a bug. Coming next; the notebook is ready: [Episode 10 - Gradient Descent](../notebooks/Episode%2010%20-%20Gradient%20Descent.ipynb).
+**Next:** [Episode 10, Gradient Descent, Part 2: Mean vs Sum, and Mini-batches](https://youtu.be/775cpR2pelw) · [episode page](../Episode%2010%20-%20Gradient%20Descent%2C%20Part%202/). Why the very same η can be fine on an average and explode on a sum, and mini-batches: why real training never uses all its data for a single step, and why that turns out to be a feature, not a bug.
 
 [← Back to the course](../README.md)

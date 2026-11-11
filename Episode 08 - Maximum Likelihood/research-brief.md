@@ -4,7 +4,7 @@
 **Runtime:** 10:36
 **Companion:** Colab notebook "Episode 08 - Maximum Likelihood" (two roads to 0.857; the likelihood from the chain rule and a second model; underflow; log, arg max, divide by N and flip; the Gaussian negative log likelihood with spread τ, lines A and B and a grid search; the gradient of the sum versus the mean; the check question; every number asserted).
 
-> **Note.** This is part 2 of a two-part topic. The loss itself (learning as adjusting θ, training and inference, mean squared error for lines A, B and C, cross-entropy for a word as the surprisal of the observed token, the mean over N terms, perplexity, the bet analogy and the myth "the loss counts wrong answers") is in Episode 7, What Learning Means, Part 1: The Loss, by Hand. This brief keeps the maximum-likelihood half of the original research file: the Math Lab (likelihood, log, mean, the Gaussian case and its assumptions), the table of the two losses ("why two losses") and the second myth ("a low training loss means a good model"). Episode numbers are updated to the final order: generalization is Episode 11; gradient descent is two episodes, the learning rate in Episode 9 and the mean versus the sum and mini-batches in Episode 10.
+> **Note.** This is part 2 of a two-part topic. The loss itself (learning as adjusting θ, training and inference, mean squared error for lines A, B and C, cross-entropy for a word as the surprisal of the observed token, the mean over N terms, perplexity, the bet analogy and the myth "the loss counts wrong answers") is in Episode 7, What Learning Means, Part 1: The Loss, by Hand. This brief keeps the maximum-likelihood half of the original research file: the Math Lab (likelihood, log, mean, the Gaussian case and its assumptions), the table of the two losses ("why two losses") and the second myth ("a low training loss means a good model"). Episode numbers are updated to the final order: generalization is Episode 12; gradient descent is three episodes, the learning rate in Episode 9, the mean versus the sum and mini-batches in Episode 10, and where it gets stuck in Episode 11.
 
 ---
 
@@ -87,7 +87,7 @@ Goodfellow notes that a linear output layer "is often used to produce the mean o
 **Step 5, the assumptions.**
 1. **Independence.** Sequences (or examples) are drawn independently: "drawn independently" [S47, §5.5, p. 128], later i.i.d. [S47, §5.5.1, p. 130]. Tokens within a sequence need no such assumption (Step 1).
 2. **Fixed model family.** θ ranges over p_θ only. If the data lie outside it, the best θ is the closest member in cross-entropy, not the truth [derived from H(q, p) = H(q) + D_KL(q‖p), S31].
-3. **Training sample.** The fit uses the training data. Generalization is Episode 11.
+3. **Training sample.** The fit uses the training data. Generalization is Episode 12.
 4. **Fixed noise for MSE.** If τ is also learned, the term N ln τ no longer drops out of the negative log-likelihood, so the loss is no longer plain squared error [derived].
 
 **Step 6, the scale.** Dividing by N rescales the loss. It does not change the minimizer, but it changes the size of the gradient [S47, §5.5, p. 129]. The two-word sum, 1.715, has a gradient twice as big as the mean, 0.857 (N = 2); with millions of words, millions of times bigger. So the step size η is set against the mean: Episode 9's learning rate, and Episode 10's mean versus sum [derived; asserted in the notebook].
@@ -96,7 +96,7 @@ Goodfellow notes that a linear output layer "is often used to produce the mean o
 
 **For the idea.** Low loss means high likelihood [Step 3].
 
-**Against it.** The loss is averaged over the training data [S47, §5.5]. A model can memorize those and still stumble on text it has never seen. Whether the model generalizes is a separate question, for Episode 11.
+**Against it.** The loss is averaged over the training data [S47, §5.5]. A model can memorize those and still stumble on text it has never seen. Whether the model generalizes is a separate question, for Episode 12.
 
 ## Section 7: Recap and check question
 

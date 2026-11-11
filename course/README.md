@@ -1,6 +1,6 @@
 # Syllabus
 
-**How Large Language Models Work: From Math to Transformers** is a free video course in 33 episodes and six parts. It starts with "what is an LLM?" and builds every piece from the math up, to a working transformer and how models are trained, scaled and evaluated.
+**How Large Language Models Work: From Math to Transformers** is a free video course in 34 episodes and six parts. It starts with "what is an LLM?" and builds every piece from the math up, to a working transformer and how models are trained, scaled and evaluated.
 
 [YouTube playlist](https://www.youtube.com/playlist?list=PLAw1yNagEJRM) · [series trailer](https://youtu.be/rXTCgq-qoJA) · [back to the README](../README.md)
 
@@ -37,28 +37,29 @@ Curious learners, students and professionals who want to understand LLMs past th
 | 7 | II | **[What Learning Means, Part 1: The Loss, by Hand](../Episode%2007%20-%20The%20Loss%2C%20by%20Hand/)**<br><sub>Parameters, training and inference; mean squared error and cross-entropy by hand; the loss as a mean, and perplexity</sub> | [notebook](../Episode%2007%20-%20The%20Loss%2C%20by%20Hand/notebook.ipynb) | [video](https://youtu.be/ia7aFhn_20k) |
 | 8 | II | **[What Learning Means, Part 2: Maximum Likelihood, by Hand](../Episode%2008%20-%20Maximum%20Likelihood/)**<br><sub>Why these two losses: the likelihood, its log and mean, the Gaussian case, and when a low training loss is not enough</sub> | [notebook](../Episode%2008%20-%20Maximum%20Likelihood/notebook.ipynb) | [video](https://youtu.be/u1bSbpKfF6g) |
 | 9 | II | **[Gradient Descent, Part 1: The Learning Rate, by Hand](../Episode%2009%20-%20Gradient%20Descent%2C%20Part%201/)**<br><sub>The update rule, the factor 1 − 2ηκ, which learning rates settle, bounce or blow up, and why the steepest direction sets the limit</sub> | [notebook](../Episode%2009%20-%20Gradient%20Descent%2C%20Part%201/notebook.ipynb) | [video](https://youtu.be/9H0EDfR4wFo) |
-| 10 | II | **Gradient Descent, Part 2**<br><sub>Mean vs sum: why the same η can be fine on an average and explode on a sum; mini-batches</sub> | [notebook](../notebooks/Episode%2010%20-%20Gradient%20Descent.ipynb) | video in production |
-| 11 | II | **Generalization: Overfitting, Validation, Regularization**<br><sub>Practice score vs exam score; held-out data; keeping models honest</sub> | [notebook](../notebooks/Episode%2011%20-%20Generalization.ipynb) | video in production |
-| 12 | II | **Turning Text into Training Examples**<br><sub>How one page of text becomes many next-token questions</sub> | [notebook](../notebooks/Episode%2012%20-%20Training%20Examples.ipynb) | video in production |
-| 13 | II | **Tokens and Embeddings**<br><sub>Byte-pair encoding and the embedding table</sub> | [notebook](../notebooks/Episode%2013%20-%20Tokens%20and%20Embeddings.ipynb) | video in production |
-| 14 | III | **The Artificial Neuron and Activation Functions**<br><sub>Weighted sums, biases and the bend (ReLU, GELU) that makes depth useful</sub> | [notebook](../notebooks/Episode%2014%20-%20Neuron%20and%20Activations.ipynb) | video in production |
-| 15 | III | **Deep Networks and Backpropagation**<br><sub>Layers, and how blame flows backward through them</sub> | [notebook](../notebooks/Episode%2015%20-%20Backpropagation.ipynb) | video in production |
-| 16 | III | **Training a Network End to End**<br><sub>Putting the pieces together: data, forward pass, loss, gradients, optimizer</sub> | [notebook](../notebooks/Episode%2016%20-%20Training%20End%20to%20End.ipynb) | video in production |
-| 17 | III | **What Networks Learn: Representations**<br><sub>Probing what the hidden layers encode</sub> | [notebook](../notebooks/Episode%2017%20-%20Representations.ipynb) | video in production |
-| 18 | IV | **Before Transformers: Counting Words**<br><sub>N-gram models, smoothing and what counting can and cannot do</sub> | [notebook](../notebooks/Episode%2018%20-%20Counting%20Words.ipynb) | video in production |
-| 19–25 | IV | **The Transformer**<br><sub>Recurrent networks, attention, the transformer block, sampling and temperature, and building a tiny GPT</sub> | with each episode | planned |
-| 26–29 | V | **Building and Scaling a Model**<br><sub>Pretraining, scaling laws, training at scale, and post-training (instruction tuning, human feedback, reasoning RL)</sub> | with each episode | planned |
-| 30–33 | VI | **Beyond the Basics**<br><sub>New architectures, LLM systems, how LLMs fail (memorization included), and evaluation and governance</sub> | with each episode | planned |
+| 10 | II | **[Gradient Descent, Part 2: Mean vs Sum, and Mini-batches](../Episode%2010%20-%20Gradient%20Descent%2C%20Part%202/)**<br><sub>The gradient one dot at a time, why the same η settles on a mean and explodes on a sum, and mini-batches: unbiased, with noise that falls like 1/batch size</sub> | [notebook](../Episode%2010%20-%20Gradient%20Descent%2C%20Part%202/notebook.ipynb) | [video](https://youtu.be/775cpR2pelw) |
+| 11 | II | **Where Gradient Descent Gets Stuck**<br><sub>Saddles, valleys that aren't the deepest one, and momentum</sub> | [notebook](../notebooks/Episode%2011%20-%20Gradient%20Descent.ipynb) | video in production |
+| 12 | II | **Generalization: Overfitting, Validation, Regularization**<br><sub>Practice score vs exam score; held-out data; keeping models honest</sub> | [notebook](../notebooks/Episode%2012%20-%20Generalization.ipynb) | video in production |
+| 13 | II | **Turning Text into Training Examples**<br><sub>How one page of text becomes many next-token questions</sub> | [notebook](../notebooks/Episode%2013%20-%20Training%20Examples.ipynb) | video in production |
+| 14 | II | **Tokens and Embeddings**<br><sub>Byte-pair encoding and the embedding table</sub> | [notebook](../notebooks/Episode%2014%20-%20Tokens%20and%20Embeddings.ipynb) | video in production |
+| 15 | III | **The Artificial Neuron and Activation Functions**<br><sub>Weighted sums, biases and the bend (ReLU, GELU) that makes depth useful</sub> | [notebook](../notebooks/Episode%2015%20-%20Neuron%20and%20Activations.ipynb) | video in production |
+| 16 | III | **Deep Networks and Backpropagation**<br><sub>Layers, and how blame flows backward through them</sub> | [notebook](../notebooks/Episode%2016%20-%20Backpropagation.ipynb) | video in production |
+| 17 | III | **Training a Network End to End**<br><sub>Putting the pieces together: data, forward pass, loss, gradients, optimizer</sub> | [notebook](../notebooks/Episode%2017%20-%20Training%20End%20to%20End.ipynb) | video in production |
+| 18 | III | **What Networks Learn: Representations**<br><sub>Probing what the hidden layers encode</sub> | [notebook](../notebooks/Episode%2018%20-%20Representations.ipynb) | video in production |
+| 19 | IV | **Before Transformers: Counting Words**<br><sub>N-gram models, smoothing and what counting can and cannot do</sub> | [notebook](../notebooks/Episode%2019%20-%20Counting%20Words.ipynb) | video in production |
+| 20–26 | IV | **The Transformer**<br><sub>Recurrent networks, attention, the transformer block, sampling and temperature, and building a tiny GPT</sub> | with each episode | planned |
+| 27–30 | V | **Building and Scaling a Model**<br><sub>Pretraining, scaling laws, training at scale, and post-training (instruction tuning, human feedback, reasoning RL)</sub> | with each episode | planned |
+| 31–34 | VI | **Beyond the Basics**<br><sub>New architectures, LLM systems, how LLMs fail (memorization included), and evaluation and governance</sub> | with each episode | planned |
 
-Episode topics and order after Episode 18 may change during production. Calculus for Learning was split into two episodes (5 and 6) so every step could be worked by hand, which moved every later episode up by one. What Learning Means was split the same way (7 and 8), which moved every episode after it up by one more, and so was Gradient Descent (9 and 10), one more again. The notebooks for Episodes 10–18 are published ahead of the videos; their numbers match the episode research, and the videos will follow.
+Episode topics and order after Episode 19 may change during production. Calculus for Learning was split into two episodes (5 and 6) so every step could be worked by hand, which moved every later episode up by one. What Learning Means was split the same way (7 and 8), which moved every episode after it up by one more, and Gradient Descent became three episodes (9, 10 and 11), which moved them up by two more. The notebooks for Episodes 11–19 are published ahead of the videos; their numbers match the episode research, and the videos will follow.
 
 ## The six parts
 
 | Part | Title | Episodes |
 |:--:|---|---|
 | I | Foundations | 1–6: what an LLM is, vectors, matrices, probability, calculus in two parts |
-| II | How Machines Learn | 7–13: loss and maximum likelihood in two parts, gradient descent in two parts, generalization, training examples, tokens and embeddings |
-| III | Neural Networks | 14–17: neurons, backpropagation, training, representations |
-| IV | The Transformer | 18–25: n-grams, RNNs, attention, the transformer block, building a tiny GPT |
-| V | Building and Scaling a Model | 26–29: pretraining, scaling laws, training at scale, post-training |
-| VI | Beyond the Basics | 30–33: new architectures, LLM systems, how LLMs fail, evaluation and governance |
+| II | How Machines Learn | 7–14: loss and maximum likelihood in two parts, gradient descent in three episodes, generalization, training examples, tokens and embeddings |
+| III | Neural Networks | 15–18: neurons, backpropagation, training, representations |
+| IV | The Transformer | 19–26: n-grams, RNNs, attention, the transformer block, building a tiny GPT |
+| V | Building and Scaling a Model | 27–30: pretraining, scaling laws, training at scale, post-training |
+| VI | Beyond the Basics | 31–34: new architectures, LLM systems, how LLMs fail, evaluation and governance |

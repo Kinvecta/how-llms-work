@@ -1,6 +1,6 @@
 # Glossary and notation
 
-The terms and symbols introduced in Episode 1, in plain language. So far the glossary covers Episode 1 only; each later episode's page defines its own key terms and symbols. The series fixes each symbol once and keeps it, so a letter introduced in Episode 1 means the same thing in Episode 33.
+The terms and symbols introduced in Episode 1, in plain language. So far the glossary covers Episode 1 only; each later episode's page defines its own key terms and symbols. The series fixes each symbol once and keeps it, so a letter introduced in Episode 1 means the same thing in Episode 34.
 
 [Back to the README](../README.md) · [syllabus](../course/)
 
@@ -30,12 +30,12 @@ The terms and symbols introduced in Episode 1, in plain language. So far the glo
 | Greedy decoding | Always picking the single most likely next token | 1 |
 | Sampling | Drawing the next token at random, in proportion to its probability | 1 |
 | Chain rule of probability | The probability of a whole sequence is the product of each token's probability given the tokens before it | 1 (in depth: 4) |
-| Pretraining | Training on a very large corpus to predict the next token at every position. The text supplies its own answers (self-supervised) | 1 (in depth: 7–16, 25) |
-| Post-training | Adapting a pretrained model to follow instructions, for example by fine-tuning on human-written answers and optimizing against a model of human rankings | 1 (in depth: 28) |
+| Pretraining | Training on a very large corpus to predict the next token at every position. The text supplies its own answers (self-supervised) | 1 (in depth: 7–18, 27) |
+| Post-training | Adapting a pretrained model to follow instructions, for example by fine-tuning on human-written answers and optimizing against a model of human rankings | 1 (in depth: 30) |
 | Reward model | A model trained to predict which of several answers people would rank higher | 1 |
 | Reasoning reinforcement learning | Further training on problems with checkable answers, such as math and code | 1 |
 | Inference | Running a trained model to produce output. The parameters are read, not changed | 1 |
-| Probe | A small model trained to read a property (such as an Othello board) out of another model's internal activations | 1 (in depth: 16) |
-| Memorization | Reproducing training text word for word. Real, but not the same as looking text up | 1 (in depth: 31) |
+| Probe | A small model trained to read a property (such as an Othello board) out of another model's internal activations | 1 (in depth: 18) |
+| Memorization | Reproducing training text word for word. Real, but not the same as looking text up | 1 (in depth: 33) |
 | World model | An internal representation of the state of the world that generated the data (a board, a street map) | 1 |
 | Stochastic parrot | The 2021 argument that language models stitch together seen forms by probability, without reference to meaning. One position in an open debate | 1 |
